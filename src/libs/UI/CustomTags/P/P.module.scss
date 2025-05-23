@@ -1,0 +1,51 @@
+p {
+	&.xss {
+		font-size: var(--s12);
+		line-height: var(--s14);
+	}
+	&.xs {
+		font-size: var(--s14);
+		line-height: var(--s18);
+	}
+
+	&.s {
+		font-size: var(--s16);
+		line-height: var(--s22);
+	}
+
+	&.m {
+		font-size: var(--s18);
+		line-height: var(--s24);
+	}
+
+	&.l {
+		font-size: var(--s20);
+		line-height: var(--s24);
+	}
+
+	&.xl {
+		font-size: var(--s24);
+		line-height: var(--s26);
+	}
+
+	&.xxl {
+		font-size: var(--s28);
+		line-height: var(--s40);
+	}
+}
+
+.default {
+	color: var(--casino-white);
+}
+.grey {
+	color: var(--casino-grey);
+}
+.blue_grey {
+	color: var(--casino-blue-grey-1);
+}
+.red {
+	color: var(--casino-light-red);
+}
+.green {
+	color: var(--casino-green);
+}

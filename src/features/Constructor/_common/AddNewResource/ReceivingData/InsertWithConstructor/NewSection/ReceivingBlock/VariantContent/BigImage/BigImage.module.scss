@@ -1,0 +1,10 @@
+.wrap {
+	.block {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s8);
+		.image {
+			height: var(--s200);
+		}
+	}
+}

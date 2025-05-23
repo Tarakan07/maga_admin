@@ -1,0 +1,31 @@
+@use "@/styles" as *;
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s20);
+
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s32);
+		width: 60%;
+		.wrapSection {
+			display: flex;
+			flex-direction: row;
+			gap: var(--s16);
+			.section {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				gap: var(--s16);
+			}
+			.delete {
+				width: var(--s25);
+				svg {
+					@include svgSize();
+				}
+			}
+		}
+	}
+}

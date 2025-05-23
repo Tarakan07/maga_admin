@@ -1,0 +1,66 @@
+@use "@/styles" as *;
+.wrap {
+	display: flex;
+	align-items: center;
+	gap: var(--s12);
+	position: relative;
+	width: max-content;
+	z-index: 10;
+	.header {
+		display: flex;
+		align-items: center;
+		gap: var(--s12);
+		.picker {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: var(--s4);
+			padding: var(--s12);
+			border-radius: var(--s12);
+			border: 1px solid var(--casino-blue-grey-1);
+			.color {
+				width: var(--s56);
+				height: var(--s24);
+				border-radius: 1000px;
+			}
+			svg {
+				@include svgSize();
+			}
+		}
+	}
+
+	.variantColors {
+		position: absolute;
+
+		background-color: var(--casino-bg-blue-grey);
+		padding: var(--s12);
+		width: var(--s150);
+		border-radius: var(--s16);
+		border: 1px solid var(--casino-blue-grey-1);
+		display: flex;
+		gap: var(--s8);
+		flex-wrap: wrap;
+		top: -100%;
+		transform: scale(0);
+		right: 0;
+		z-index: -1;
+		opacity: 0;
+		&.active {
+			z-index: 1000;
+			opacity: 1;
+			transform: scale(1);
+
+			top: 100%;
+		}
+		> div {
+			width: var(--s24);
+			height: var(--s24);
+			border: 2px solid transparent;
+			border-radius: 1000px;
+			cursor: pointer;
+			&.active {
+				border: 2px solid var(--casino-white);
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+:root {
+	--casino-bg-blue-grey: #0d181d;
+	--casino-bg-blue-purple: #121e26;
+	--casino-dark-grey: #878787;
+	--casino-grey: #9c9da9;
+	--casino-red: #ff1313;
+	--casino-light-red: #ff4949;
+	--casino-light-grey: #b5b5be;
+	--casino-white: #fff;
+	--casino-blue-grey-1: #2a354d;
+
+	/* // */
+	--casino-green: #2abe42;
+	--casino-quote: #1c262b;
+	--casino-green-dark: #238c34;
+	--casino-select-green: radial-gradient(
+		#2abe42,
+		104.71% 104.71% at 50.26% 51.11%,
+		#2abe42 0%,
+		#84ce90 100%
+	);
+
+	/* // */
+	--casino-white-opacity-1: rgba(255, 255, 255, 0.1);
+	--casino-white-opacity-hex: #29343b;
+	--casino-white-opacity-05: rgba(255, 255, 255, 0.05);
+	--casino-white-opacity-07: rgba(255, 255, 255, 0.07);
+	--casino-green-opacity-05: rgba(90, 255, 48, 0.5);
+	--casino-red-opacity-2: rgba(255, 65, 65, 0.2);
+	--casino-green-opacity-2: rgba(42, 190, 66, 0.2);
+	--casino-green-opacity-09: rgba(42, 190, 66, 0.2);
+	--casino-bg-blue-purple-05: rgba(18, 30, 38, 0.5);
+}

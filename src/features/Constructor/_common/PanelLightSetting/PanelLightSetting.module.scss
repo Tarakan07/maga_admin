@@ -1,0 +1,26 @@
+.panelLightSetting {
+	.filters {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.left{
+			display: flex;
+			align-items: center;
+			gap: var(--s16);
+			.reset{
+				color: var(--casino-light-red);
+				font-size: var(--s14);
+				font-family: 'Onest';
+				font-weight: 400;
+			}
+		}
+		.right{
+			display: flex;
+			gap: 15px;
+			.lang {
+				width: var(--s100);
+				height: var(--s45);
+			}
+		}
+	}
+}

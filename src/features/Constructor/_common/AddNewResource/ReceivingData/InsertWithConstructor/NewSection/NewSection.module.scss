@@ -1,0 +1,77 @@
+@use "@/styles" as *;
+
+.box {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s16);
+	background-color: var(--casino-bg-blue-grey);
+	border-radius: var(--s24);
+	overflow: hidden;
+	&.dragging {
+		position: relative;
+		overflow: hidden;
+		&::after {
+			background-color: var(--casino-bg-blue-purple-05);
+			z-index: 100;
+		}
+	}
+	&.dragActive {
+		&::after {
+			z-index: 100;
+		}
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		border-radius: var(--s24);
+		z-index: -1;
+	}
+
+	&.dragOver {
+	}
+
+	.headerTitle {
+		display: flex;
+		align-items: center;
+		gap: var(--s28);
+
+		.left {
+			display: flex;
+			align-items: center;
+			gap: var(--s12);
+			flex: 1;
+			input {
+				font-weight: 600;
+				font-size: var(--s18);
+			}
+			.handleDrag {
+				cursor: pointer;
+				svg {
+					@include svgSize();
+				}
+			}
+		}
+		.right {
+			display: flex;
+			align-items: center;
+			gap: var(--s12);
+			button.isShow {
+				transform: rotate(-180deg);
+			}
+
+			svg {
+				cursor: pointer;
+				@include svgSize();
+				transition: 0.5s;
+				transform: rotate(0deg);
+			}
+			.deleteSection {
+				cursor: pointer;
+			}
+		}
+	}
+}

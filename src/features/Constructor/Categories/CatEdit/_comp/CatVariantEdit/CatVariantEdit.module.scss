@@ -1,0 +1,14 @@
+@use '@/styles' as *;
+
+.container {
+	display: flex;
+	align-items: center;
+	gap: var(--s8);
+	div {
+		display: flex;
+		cursor: pointer;
+		svg {
+			@include svgSize(var(--s20), var(--s20));
+		}
+	}
+}

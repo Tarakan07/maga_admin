@@ -1,0 +1,33 @@
+.wrap {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 1px;
+		background-color: var(--casino-green);
+	}
+	.circle {
+		width: var(--s12);
+		height: var(--s12);
+		border: var(--s3) solid var(--casino-green);
+		border-radius: 1000px;
+		background-color: var(--casino-bg-blue-grey);
+	}
+	.place {
+		background-color: var(--casino-green);
+		padding: var(--s2) var(--s12);
+		border-radius: 1000px;
+
+		p {
+			line-height: 100%;
+		}
+	}
+}

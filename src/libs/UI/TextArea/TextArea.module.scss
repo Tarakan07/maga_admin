@@ -1,0 +1,54 @@
+.textarea {
+	// flex: 1;
+	width: 100%;
+	height: 100%;
+	resize: vertical;
+	min-height: var(--s48);
+	background: var(--casino-bg-blue-purple);
+	font-size: var(--s16);
+	color: var(--casino-white);
+
+	&::placeholder {
+		color: var(--casino-light-grey);
+	}
+	&::-webkit-scrollbar {
+		width: var(--s4);
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--casino-light-grey);
+		border-radius: 12px;
+	}
+
+	&.default {
+		border: 1px solid var(--casino-blue-grey-1);
+		border-radius: var(--s12);
+		padding: var(--s16);
+		resize: none;
+	}
+	&.insert {
+		flex: none;
+		border: 1px solid var(--casino-blue-grey-1);
+		border-radius: var(--s12);
+		min-height: var(--s132);
+		padding: var(--s16);
+		color: var(--casino-light-grey);
+	}
+	&.table {
+		background-color: transparent;
+		font-size: var(--s18);
+		resize: none;
+	}
+	&.input {
+		background-color: var(--casino-bg-blue-grey);
+		padding: var(--s14) var(--s16);
+		border: 1px solid var(--casino-blue-grey-1);
+		border-radius: var(--s12);
+		height: var(--s48);
+		resize: none;
+	}
+}

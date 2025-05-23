@@ -1,0 +1,141 @@
+.selectWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s6);
+	label{
+		font-size: var(--s16);
+	}
+}
+.inputWrapper {
+	border-radius: var(--s12);
+	border: 1px solid var(--casino-blue-grey-1);
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	padding: var(--s14) var(--s16);
+	min-width: var(--s300);
+	gap: var(--s24);
+	.cards {
+		display: flex;
+		align-items: center;
+		gap: var(--s8);
+		flex-wrap: wrap;
+		.card {
+			display: flex;
+			align-items: center;
+			gap: var(--s4);
+			z-index: 10;
+			padding: var(--s6) var(--s10);
+			padding-right: 1px;
+			background-color: var(--casino-white-opacity-hex);
+			border-radius: var(--s8);
+			font-size: var(--s16);
+			svg {
+				width: var(--s28);
+				height: var(--s28);
+				cursor: pointer;
+			}
+		}
+	}
+	.placeholder {
+		font-size: var(--s16);
+		color: var(--casino-grey);
+	}
+
+	input {
+		background-color: transparent;
+		border: none;
+		outline: none;
+		color: var(--casino-white);
+		font-family: var(--onest);
+		font-size: var(--s16);
+		font-weight: 400;
+		line-height: 140%;
+		display: none;
+	}
+}
+.not_empty {
+	justify-content: space-between;
+}
+
+.window {
+	padding: var(--s16);
+	background-color: var(--casino-bg-blue-grey);
+	border: 1px solid var(--casino-blue-grey-1);
+	border-radius: var(--s12);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--s16);
+	.search {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s16);
+		input {
+			background: transparent;
+			outline: none;
+			border: none;
+			border-bottom: 1px solid var(--casino-blue-grey-1);
+			color: var(--casino-white);
+			&::placeholder {
+				font-size: var(--s16);
+			}
+		}
+	}
+	.variants {
+		display: flex;
+		gap: var(--s40);
+		flex-wrap: wrap;
+		.window_card {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: var(--s8);
+			position: relative;
+			cursor: pointer;
+			p {
+				font-size: var(--s16);
+			}
+			.custom_checkbox {
+				display: flex;
+				justify-content: center;
+				width: var(--s24);
+				height: var(--s24);
+				position: relative;
+				cursor: pointer;
+				svg {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					z-index: 1;
+				}
+			}
+
+			.custom_checkbox input {
+				position: absolute;
+				opacity: 0;
+			}
+
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: var(--s24);
+				height: var(--s24);
+				border-radius: var(--s4);
+				display: inline-block;
+			}
+
+			.custom_checkbox .checkmark {
+				border: 1px solid var(--casino-grey);
+			}
+
+			.custom_checkbox .checked {
+				background-color: var(--casino-green);
+				border-color: var(--casino-green);
+			}
+		}
+	}
+}

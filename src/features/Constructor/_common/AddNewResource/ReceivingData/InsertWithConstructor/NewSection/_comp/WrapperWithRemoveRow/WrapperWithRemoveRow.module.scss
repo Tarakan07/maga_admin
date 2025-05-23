@@ -1,0 +1,14 @@
+@use "@/styles" as *;
+.wrap {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	gap: var(--s4);
+	button {
+		@include svgSize();
+		svg {
+			@include svgSize();
+		}
+	}
+}

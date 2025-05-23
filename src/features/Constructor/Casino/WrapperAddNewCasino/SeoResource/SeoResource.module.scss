@@ -1,0 +1,31 @@
+.seo {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s24);
+	.inputFile_block {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s6);
+		> p {
+			font-size: var(--s16);
+		}
+		.inputFile {
+			// width: var(--s200);
+			// height: var(--s140);
+			width: max-content;
+		}
+	}
+	.inputs_block {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s16);
+		> p {
+			font-size: var(--s16);
+		}
+		.inputs {
+			display: flex;
+			flex-direction: column;
+			gap: var(--s12);
+		}
+	}
+}

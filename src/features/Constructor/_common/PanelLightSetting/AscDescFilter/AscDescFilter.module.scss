@@ -1,0 +1,12 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--s45);
+    height: var(--s45);
+    cursor: pointer;
+    padding: var(--s8);
+	border: 1px solid var(--casino-blue-grey-1);
+	border-radius: var(--s12);
+    background: var(--casino-bg-blue-grey);
+}

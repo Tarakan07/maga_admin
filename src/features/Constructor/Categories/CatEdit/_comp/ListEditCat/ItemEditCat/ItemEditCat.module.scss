@@ -1,0 +1,78 @@
+@use '@/styles' as *;
+.wrapItem {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s16);
+	margin-left: var(--s32);
+
+	&.isOpen {
+		.itemMain {
+			.info {
+				.arrow {
+					svg {
+						transform: rotate(90deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+
+.itemMain {
+	display: flex;
+	align-items: center;
+	gap: var(--s32);
+	width: max-content;
+	.info {
+		display: flex;
+		align-items: center;
+		gap: var(--s16);
+		cursor: pointer;
+		.arrow {
+			width: var(--s16);
+			svg {
+				@include svgSize(var(--s16), var(--s16));
+			}
+		}
+
+		.infoTitle {
+			display: flex;
+			align-items: center;
+			gap: var(--s8);
+
+			.title {
+				padding: var(--s4) var(--s8);
+				background-color: var(--casino-white-opacity-05);
+				border-radius: var(--s6);
+				width: max-content;
+			}
+		}
+	}
+
+	.setting {
+		display: none;
+	}
+	&:hover .setting {
+		display: block;
+	}
+}
+
+///
+
+.itemsChild {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s16);
+
+	position: relative;
+	.line {
+		position: absolute;
+		height: 100%;
+		svg {
+			width: 4px;
+			height: 100%;
+		}
+	}
+}

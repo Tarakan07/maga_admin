@@ -1,0 +1,6 @@
+.wrap {
+	& > div {
+		height: var(--s45);
+		width: var(--s170);
+	}
+}

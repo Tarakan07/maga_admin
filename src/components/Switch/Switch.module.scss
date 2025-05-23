@@ -1,0 +1,27 @@
+.switchContainer {
+	width: var(--s54);
+	height: var(--s30);
+	background-color: var(--casino-blue-grey-1);
+	border-radius: 10000px;
+	padding: var(--s5);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	transition: background-color 0.3s ease;
+	&.on {
+		.switchBall {
+			left: calc(100% - 45%);
+			background-color: var(--casino-green);
+		}
+	}
+	.switchBall {
+		width: var(--s20);
+		height: var(--s20);
+		background-color: var(--casino-red);
+		border-radius: 50%;
+		position: absolute;
+		left: 10%;
+		transition: left 0.3s ease;
+	}
+}

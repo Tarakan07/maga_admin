@@ -1,0 +1,30 @@
+@use "@/styles" as *;
+
+.title {
+	color: var(--casino-white);
+
+	&.m {
+        font-weight: 600;
+		font-size: var(--s24);
+		line-height: 140%;
+	}
+
+    &.l {
+        text-transform: uppercase;
+		font-weight: 500;
+		font-size: var(--s32);
+		line-height: 120%;
+    }
+}
+
+@include mobile {
+	.title {
+		&.m {
+			font-size: var(--s20);
+		}
+
+		&.l {
+			font-size: var(--s24);
+		}
+	}
+}

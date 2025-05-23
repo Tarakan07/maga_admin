@@ -1,0 +1,18 @@
+.wrap {
+	padding-bottom: var(--s11);
+	.block {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s8);
+		> div {
+			height: var(--s90);
+			position: relative;
+			.duplicate {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%) translateY(50%);
+			}
+		}
+	}
+}

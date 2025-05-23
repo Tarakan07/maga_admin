@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx eslint --config ./eslint.config.js src/**/*.{ts,tsx} --fix
+
+if [ $? -ne 0 ]; then
+  echo "ESLint found errors. FIX!!!"
+  exit 1
+else
+  echo "No ESLint errors."
+
+  git add .
+fi

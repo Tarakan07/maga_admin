@@ -1,0 +1,110 @@
+@use '@/styles' as *;
+
+.button {
+	font-family: var(--onest);
+	width: max-content;
+	-webkit-tap-highlight-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--s4);
+	svg {
+		@include svgSize();
+	}
+
+	line-height: 100%;
+	font-weight: 500;
+	color: var(--casino-blue-grey-1);
+
+	font-size: var(--s16);
+}
+.primary {
+	border-radius: 1000px;
+	background: radial-gradient(
+		49.74% 49.74% at 50.26% 51.11%,
+		#2abe42 0%,
+		#84ce90 100%
+	);
+
+	border: 1px solid transparent;
+	&.m {
+		height: var(--s40);
+		padding: var(--s10) var(--s24);
+	}
+	&.s {
+		border-radius: var(--s8);
+		padding: var(--s6) var(--s10);
+	}
+	&.disabled {
+		background: var(--casino-dark-grey);
+		border: 1px solid var(--casino-light-grey);
+		color: var(--casino-light-grey);
+	}
+}
+.secondary {
+	border-radius: 1000px;
+	background: var(--casino-dark-grey);
+	border: 1px solid var(--casino-light-grey);
+	padding: var(--s10) var(--s24);
+	color: var(--casino-light-grey);
+}
+.primary_row {
+	height: var(--s40);
+
+	padding: var(--s10) 0;
+	width: 100%;
+	border-radius: var(--s12);
+	background: radial-gradient(
+		49.74% 49.74% at 50.26% 51.11%,
+		#2abe42 0%,
+		#84ce90 100%
+	);
+	color: var(--casino-blue-grey-1);
+	border: 1px solid transparent;
+	font-size: var(--s16);
+	line-height: 100%;
+	&.disabled {
+		background: var(--casino-dark-grey);
+		color: var(--casino-light-grey);
+		border: 1px solid var(--casino-light-grey);
+
+		color: var(--casino-light-grey);
+	}
+}
+
+.copy {
+	height: var(--s40);
+	background-color: var(--casino-white-opacity-1);
+	padding: var(--s8) var(--s16);
+	border-radius: 1000px;
+
+	font-size: var(--s16);
+	color: var(--casino-white);
+	font-weight: 600;
+}
+
+.add {
+	background: var(--casino-green);
+	color: var(--casino-blue-grey-1);
+	font-size: var(--s16);
+	font-weight: 500;
+	padding: var(--s7) var(--s10);
+	border-radius: var(--s8);
+}
+
+.remove {
+	border-radius: 1000px;
+	background: var(--casino-red);
+	color: var(--casino-white);
+
+	&.m {
+		height: var(--s40);
+		padding: var(--s10) var(--s24);
+	}
+}
+.empty {
+	color: var(--casino-white);
+
+	height: var(--s40);
+	padding: var(--s10) var(--s24);
+}

@@ -1,0 +1,17 @@
+.wrap {
+	.block {
+		display: flex;
+		align-items: center;
+		gap: var(--s16);
+		.item {
+			display: flex;
+			flex-direction: column;
+			gap: var(--s8);
+			flex: 1;
+
+			.image {
+				height: var(--s200);
+			}
+		}
+	}
+}

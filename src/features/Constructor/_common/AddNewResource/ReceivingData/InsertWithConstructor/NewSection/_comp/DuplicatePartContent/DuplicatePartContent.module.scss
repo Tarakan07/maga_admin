@@ -1,0 +1,11 @@
+.addIndent {
+	cursor: pointer;
+	width: max-content;
+	height: max-content;
+	display: flex;
+	align-items: center;
+	gap: var(--s6);
+	padding: var(--s4) var(--s11);
+	border-radius: 1000px;
+	background-color: #2a353c;
+}

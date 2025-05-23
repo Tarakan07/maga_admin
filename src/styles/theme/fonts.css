@@ -1,0 +1,61 @@
+:root {
+	--songer: "SONGER SemiExpanded", sans-serif;
+	--onest: "Onest", sans-serif;
+	--rammetto: "RammettoOne Regular", sans-serif;
+}
+
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-Thin.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-ExtraLight.ttf")
+		format("truetype");
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-Bold.ttf") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Onest";
+	src: url("../../../public/fonts/onest/Onest-Black.ttf") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+}

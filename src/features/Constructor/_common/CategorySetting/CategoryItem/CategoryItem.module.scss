@@ -1,0 +1,51 @@
+@use '@/styles' as *;
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s20);
+	margin-left: var(--s32);
+	.main {
+		display: flex;
+		align-items: center;
+		gap: var(--s16);
+		.arrow {
+			width: var(--s16);
+			cursor: pointer;
+			svg {
+				@include svgSize(var(--s16), var(--s16));
+			}
+		}
+
+		.right {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: var(--s8);
+			.infoTitle {
+				display: flex;
+				align-items: center;
+				gap: var(--s8);
+
+				.title {
+					padding: var(--s4) var(--s8);
+					background-color: var(--casino-white-opacity-05);
+					border-radius: var(--s6);
+					width: max-content;
+					line-height: 100%;
+				}
+			}
+		}
+	}
+	&.isOpen {
+		.main {
+			.arrow {
+				transform: rotate(90deg);
+			}
+		}
+	}
+	.child {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s20);
+	}
+}

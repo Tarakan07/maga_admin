@@ -1,0 +1,47 @@
+.wrapper {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s40);
+    background-color: var(--casino-bg-blue-purple);
+    padding: var(--s56) var(--s104);
+    border-radius: 40px;
+
+    .title {
+      color: #fff;
+      text-align: center;
+      font-family: var(--songer);
+      font-size: var(--s32);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s12);
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        border: 0px;
+        -webkit-text-fill-color: var(--casino-light-grey);
+        -webkit-box-shadow: 0 0 0px 1000px var(--casino-bg-blue-purple) inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--s24);
+    }
+  }
+}

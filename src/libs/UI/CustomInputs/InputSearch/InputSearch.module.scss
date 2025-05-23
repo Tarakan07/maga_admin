@@ -1,0 +1,22 @@
+.wrapInputSearch {
+	display: flex;
+	align-items: center;
+	gap: var(--s8);
+	padding: var(--s10) var(--s12);
+	border: 1px solid var(--casino-blue-grey-1);
+	border-radius: var(--s12);
+	input {
+		outline: none;
+		border: none;
+		background: transparent;
+		color: var(--casino-white);
+		font-size: var(--s16);
+		&::placeholder {
+			color: var(--casino-light-grey);
+		}
+	}
+	svg{
+		width: var(--s24);
+		height: var(--s24);
+	}
+}

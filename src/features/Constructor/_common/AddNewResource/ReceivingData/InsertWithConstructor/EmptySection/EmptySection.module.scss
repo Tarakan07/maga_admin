@@ -1,0 +1,17 @@
+.wrap {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--s42);
+	gap: var(--s8);
+	background-color: var(--casino-white-opacity-07);
+	border-radius: var(--s24);
+	border: 1px dashed var(--casino-green-dark);
+	cursor: pointer;
+	> div {
+		display: flex;
+		align-items: center;
+		gap: var(--s10);
+	}
+}

@@ -1,0 +1,168 @@
+.publishCalendar {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s16);
+	position: relative;
+	.inputCalendar {
+		position: relative;
+		z-index: 10;
+		cursor: pointer;
+		input {
+			cursor: inherit;
+		}
+		.calendar {
+			position: absolute;
+			z-index: 5;
+			right: var(--s10);
+			top: var(--s12);
+		}
+		.svg {
+			position: absolute;
+			z-index: 5;
+			right: var(--s10);
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.calendar {
+			svg {
+				width: var(--s20);
+				height: var(--s20);
+			}
+		}
+		.reset {
+			top: 50%;
+			z-index: 20;
+			svg {
+				width: var(--s16);
+				height: var(--s16);
+			}
+		}
+	}
+}
+.react-calendar {
+	position: absolute;
+	width: 100%;
+	top: 100%;
+	background-color: var(--casino-bg-blue-purple);
+	border: var(--s2) solid var(--casino-blue-grey-1);
+	border-radius: var(--s12);
+	font-size: var(--s14);
+	font-weight: 700;
+	z-index: 100;
+	box-shadow: 0 0 0;
+	padding: 0;
+	span {
+		color: var(--casino-white);
+	}
+}
+
+:global {
+	.rmdp-wrapper .rmdp-top-class .rmdp-calendar {
+		.rmdp-header {
+			font-size: var(--s14);
+			.rmdp-arrow-container {
+				width: var(--s24);
+				height: var(--s20);
+				align-items: center;
+				&:hover {
+					background-color: var(--casino-green);
+				}
+				.rmdp-arrow {
+					margin-top: 0;
+					width: var(--s3);
+					height: var(--s3);
+					border-color: var(--casino-white);
+				}
+			}
+		}
+		.rmdp-day-picker {
+			padding: 0;
+			left: var(-(--s2));
+			right: var(--s2);
+			.rmdp-week {
+				.rmdp-week-day {
+					font-size: var(--s13);
+					color: var(--casino-white);
+				}
+				.rmdp-day {
+					width: var(--s34);
+					height: var(--s34);
+					span {
+						font-size: var(--s14);
+						&:hover {
+							background-color: var(--casino-green);
+						}
+					}
+				}
+				.rmdp-range {
+					background-color: var(--casino-green);
+					box-shadow: 0 0 0;
+				}
+				.rmdp-today {
+					span {
+						background-color: var(--casino-green-dark);
+						&:hover {
+							background-color: var(--casino-green);
+						}
+					}
+				}
+				.rmdp-day-hidden span {
+					&:hover {
+						background: unset;
+					}
+				}
+			}
+		}
+		.rmdp-month-picker {
+			background-color: var(--casino-bg-blue-purple);
+			padding: 0;
+			left: var(-(--s2));
+			right: var(--s2);
+			.rmdp-ym {
+				.rmdp-day {
+					width: var(--s34);
+					height: var(--s34);
+					span {
+						font-size: var(--s14);
+						&:hover {
+							background-color: var(--casino-green);
+						}
+					}
+				}
+				.rmdp-selected span {
+					background-color: var(--casino-green);
+					box-shadow: 0 0 0;
+				}
+				.rmdp-today span {
+					background-color: var(--casino-green-dark);
+				}
+			}
+		}
+		.rmdp-year-picker {
+			background-color: var(--casino-bg-blue-purple);
+			padding: 0;
+			left: var(-(--s2));
+			right: var(--s2);
+			.rmdp-ym {
+				.rmdp-day {
+					span {
+						font-size: var(--s14);
+						&:hover {
+							background-color: var(--casino-green);
+						}
+					}
+				}
+				.rmdp-selected span {
+					background-color: var(--casino-green);
+					box-shadow: 0 0 0;
+				}
+				.rmdp-today span {
+					background-color: var(--casino-green-dark);
+				}
+			}
+		}
+		div {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	gap: var(--s24);
+	justify-content: center;
+	.circle {
+		cursor: pointer;
+		background-color: var(--casino-white-opacity-1);
+		border-radius: 1000px;
+		width: var(--s36);
+		height: var(--s36);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&.number {
+			&.active {
+				background: var(
+					--green-gr,
+					radial-gradient(
+						104.71% 104.71% at 50.26% 51.11%,
+						#2abe42 0%,
+						#84ce90 100%
+					)
+				);
+			}
+		}
+
+		&.arrowRight {
+			transform: rotate(180deg);
+		}
+
+		&.arrow {
+			&.inactive {
+				background-color: var(--casino-white-opacity-05);
+			}
+		}
+	}
+
+	.wrapNumbers {
+		display: flex;
+		align-items: center;
+		gap: var(--s8);
+	}
+}

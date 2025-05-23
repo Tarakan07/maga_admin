@@ -1,0 +1,66 @@
+.container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.darkBackground {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 2;
+}
+
+.ModalWindow {
+	position: absolute;
+	z-index: 3;
+	border-radius: 8px;
+
+	&__fullScreen {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		border-radius: 0px;
+		min-width: none;
+	}
+
+	&.center {
+		z-index: 3;
+		// animation: modalAnimation 0.3s ease-in-out forwards;
+		// transform: translate(-50%, -50%);
+		// -webkit-animation: modalAnimation 0.3s ease-in-out forwards;
+	}
+	&.right_bottom {
+		right: var(--s40);
+		bottom: var(--s40);
+	}
+}
+
+// @keyframes modalAnimation {
+// 	100% {
+// 		transform: translate(-50%, -50%) scale(1);
+// 		-webkit-transform: translate(-50%, -50%) scale(1);
+// 		-moz-transform: translate(-50%, -50%) scale(1);
+// 		-ms-transform: translate(-50%, -50%) scale(1);
+// 		-o-transform: translate(-50%, -50%) scale(1);
+// 	}
+
+// 	0% {
+// 		transform: translate(-50%, -50%) scale(0);
+// 		-webkit-transform: translate(-50%, -50%) scale(0);
+// 		-moz-transform: translate(-50%, -50%) scale(0);
+// 		-ms-transform: translate(-50%, -50%) scale(0);
+// 		-o-transform: translate(-50%, -50%) scale(0);
+// 	}
+// }

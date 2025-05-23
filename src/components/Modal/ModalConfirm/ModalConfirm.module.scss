@@ -1,0 +1,39 @@
+@use '@/styles' as *;
+.container {
+	padding: var(--s40);
+	padding-top: var(--s24);
+	background-color: var(--casino-bg-blue-grey);
+	border-radius: var(--s40);
+	max-width: var(--s450);
+	.close {
+		display: flex;
+		justify-content: flex-end;
+		svg {
+			cursor: pointer;
+			@include svgSize(var(--s32), var(--s32));
+		}
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s32);
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s16);
+		p {
+			text-align: center;
+		}
+	}
+	.actions {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--s12);
+		button {
+			width: 100%;
+		}
+	}
+}

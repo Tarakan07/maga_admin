@@ -1,0 +1,45 @@
+.setting {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s32);
+	padding: var(--s18);
+	border-radius: var(--s24);
+	background-color: var(--casino-bg-blue-purple);
+	.setting_main {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s24);
+		.wrap {
+			display: flex;
+			flex-direction: column;
+			gap: var(--s24);
+			.body {
+				display: flex;
+				flex-direction: column;
+				gap: var(--s14);
+				.row {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					.langSelector {
+						height: var(--s40);
+						width: var(--s100);
+					}
+				}
+			}
+		}
+	}
+	.setting_footer {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: var(--s8);
+		svg{
+			width: var(--s24);
+			height: var(--s24);
+		}
+		p{
+			font-size: var(--s16);
+		}
+	}
+}

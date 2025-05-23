@@ -1,0 +1,20 @@
+.wrap {
+	display: flex;
+	align-items: center;
+	gap: var(--s8);
+	cursor: pointer;
+	.checkBox {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--s24);
+		height: var(--s24);
+		border: 1px solid var(--casino-grey);
+		border-radius: var(--s4);
+
+		&.active {
+			background-color: var(--casino-green);
+			border: 1px solid var(--casino-green);
+		}
+	}
+}

@@ -1,0 +1,28 @@
+@use "@/styles" as *;
+
+.wrapNav {
+	nav {
+		ul {
+			display: flex;
+			flex-direction: column;
+			width: var(--s200);
+			li {
+				a {
+					width: 100%;
+					padding: var(--s16);
+					display: flex;
+					align-items: center;
+					gap: var(--s8);
+					border-radius: 1000px;
+					svg {
+						@include svgSize();
+					}
+					&.isActive {
+						background-color: var(--casino-green-opacity-09);
+						color: var(--casino-white);
+					}
+				}
+			}
+		}
+	}
+}

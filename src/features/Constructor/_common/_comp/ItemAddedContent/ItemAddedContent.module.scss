@@ -1,0 +1,92 @@
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--s16);
+	border: 1px solid var(--casino-blue-grey-1);
+	border-radius: var(--s24);
+	background: linear-gradient(
+			226deg,
+			rgba(255, 255, 255, 0) 25.23%,
+			rgba(30, 32, 52, 0.16) 143.65%
+		),
+		rgba(30, 32, 52, 0.4);
+}
+
+.itemLeft {
+	display: flex;
+	align-items: center;
+	gap: var(--s72);
+	flex: 0.7;
+	.mainInfo {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		.title {
+			width: var(--s390);
+
+			display: flex;
+			align-items: center;
+			gap: var(--s16);
+			> p {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 95%;
+			}
+			.position {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: var(--s40);
+				height: var(--s40);
+				border: 1px solid var(--casino-blue-grey-1);
+				border-radius: 1000px;
+				background: var(--casino-white-opacity-05);
+			}
+		}
+		.wrapStatus {
+			flex: 1;
+			.status {
+				display: flex;
+				align-items: center;
+				padding: var(--s5) var(--s8);
+				border-radius: 1000px;
+				gap: var(--s4);
+				width: max-content;
+				> div {
+					width: var(--s14);
+					height: var(--s14);
+					border-radius: 1000px;
+				}
+				&.active {
+					background: var(--casino-green-opacity-2);
+					> div {
+						background: var(--casino-green);
+					}
+				}
+				&.inactive {
+					background: var(--casino-red-opacity-2);
+
+					> div {
+						background: var(--casino-red);
+					}
+				}
+			}
+		}
+	}
+}
+
+.setting {
+	display: flex;
+	align-items: center;
+	gap: var(--s24);
+	> div {
+		cursor: pointer;
+	}
+	svg {
+		width: var(--s24);
+		height: var(--s24);
+	}
+}

@@ -1,0 +1,14 @@
+import WrapperLang from '@/components/WrapperLang/WrapperLang'
+import WrapperAddNewCategory from '@/features/Constructor/Categories/WrapperVariantResource/WrapperAddNewCategory/WrapperAddNewCategory'
+import React from 'react'
+
+const AddNewCategory = () => {
+  return (
+    <WrapperLang>
+      <WrapperAddNewCategory editFor='ADD' labelPage='Добавление категории' />
+    </WrapperLang>
+  )
+
+}
+
+export default AddNewCategory

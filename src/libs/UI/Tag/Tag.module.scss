@@ -1,0 +1,22 @@
+.card {
+	display: flex;
+	align-items: center;
+	gap: var(--s4);
+	z-index: 10;
+	padding: var(--s6) var(--s10);
+	&.remove {
+		padding-right: 0;
+	}
+	background-color: var(--casino-white-opacity-hex);
+	border-radius: var(--s8);
+	font-size: var(--s16);
+	font-weight: 500;
+
+	cursor: pointer;
+
+	svg {
+		width: var(--s28);
+		height: var(--s28);
+		cursor: pointer;
+	}
+}

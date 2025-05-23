@@ -1,0 +1,4 @@
+@mixin svgSize($width: var(--s24), $height: var(--s24)) {
+	width: $width;
+	height: $height;
+}

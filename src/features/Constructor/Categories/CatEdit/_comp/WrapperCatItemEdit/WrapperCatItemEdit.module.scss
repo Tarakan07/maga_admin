@@ -1,0 +1,36 @@
+@use '@/styles' as *;
+
+.container {
+	border-bottom: 1px solid var(--casino-blue-grey-1);
+	display: flex;
+	flex-direction: column;
+	gap: var(--s8);
+	.wrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: var(--s16);
+
+		.left {
+			display: flex;
+			align-items: center;
+			gap: var(--s16);
+			svg {
+				@include svgSize(var(--s16), var(--s16));
+			}
+			cursor: pointer;
+			.info {
+				display: flex;
+				align-items: flex-end;
+				gap: var(--s8);
+			}
+		}
+		&.isOpen {
+			.left {
+				svg {
+					transform: rotate(90deg);
+				}
+			}
+		}
+	}
+}

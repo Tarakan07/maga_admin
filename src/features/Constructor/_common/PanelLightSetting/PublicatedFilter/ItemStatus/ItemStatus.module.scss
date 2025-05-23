@@ -1,0 +1,26 @@
+.item {
+	display: flex;
+	align-items: center;
+	gap: var(--s4);
+	height: var(--s32);
+	.box {
+		display: flex;
+		align-items: center;
+		gap: var(--s4);
+		padding: var(--s6) var(--s8);
+		flex: 1;
+		border-radius: var(--s8);
+	}
+	&.itemChosen {
+		height: var(--s45);
+	}
+	&.placeholder {
+		p {
+			color: var(--casino-grey);
+		}
+	}
+	svg {
+		width: var(--s24);
+		height: var(--s24);
+	}
+}

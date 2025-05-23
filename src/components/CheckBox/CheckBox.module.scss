@@ -1,0 +1,23 @@
+@use '@/styles' as *;
+.container {
+	width: var(--s24);
+	height: var(--s24);
+	border-radius: var(--s4);
+	border: 1px solid var(--casino-grey);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	svg {
+		display: none;
+		@include svgSize(var(--s16), var(--s16));
+	}
+
+	&.isActive {
+		background-color: var(--casino-green);
+		border: 1px solid var(--casino-gray);
+		svg {
+			display: block;
+		}
+	}
+}

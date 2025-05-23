@@ -1,0 +1,43 @@
+.wrap {
+	.block {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s12);
+		.content {
+			display: flex;
+			width: 100%;
+			gap: var(--s16);
+			&.reverse {
+				flex-direction: row-reverse;
+			}
+			.imageBlock {
+				display: flex;
+				flex-direction: column;
+				gap: var(--s12);
+				.image {
+					width: var(--s370);
+					height: var(--s200);
+				}
+			}
+			.textBlock {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				gap: var(--s8);
+				.item {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					.wrapField {
+						width: 100%;
+						height: var(--s90);
+					}
+					.duplicate {
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+	}
+}

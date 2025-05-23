@@ -1,0 +1,37 @@
+@use "@/styles" as *;
+.item {
+	display: flex;
+	align-items: center;
+	gap: var(--s4);
+	height: var(--s38);
+	svg {
+		@include svgSize();
+	}
+	.box {
+		display: flex;
+		align-items: center;
+		padding: var(--s6) var(--s8);
+		gap: var(--s4);
+		flex: 1;
+		border-radius: var(--s8);
+	}
+	&.itemChosen {
+		height: var(--s43);
+		.box {
+			padding: 0;
+			padding-left: var(--s6);
+		}
+	}
+
+	&.isActive .box {
+		background-color: var(--casino-blue-grey-1);
+	}
+}
+
+.currentLang {
+	display: flex;
+	align-items: center;
+	gap: var(--s4);
+	height: 100%;
+	align-self: center;
+}

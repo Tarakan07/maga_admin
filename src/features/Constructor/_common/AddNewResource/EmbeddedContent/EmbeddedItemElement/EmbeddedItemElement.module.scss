@@ -1,0 +1,21 @@
+@use '@/styles' as *;
+
+.item {
+	padding: var(--s14) var(--s4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: var(--s8);
+	border-radius: var(--s12);
+	background-color: var(--casino-blue-grey-1);
+	width: var(--s80);
+	height: var(--s75);
+	cursor: pointer;
+	p {
+		font-size: var(--s11);
+	}
+	svg {
+		@include svgSize();
+	}
+}

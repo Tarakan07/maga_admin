@@ -1,0 +1,47 @@
+.item {
+	display: flex;
+	align-items: center;
+	gap: var(--s4);
+	height: var(--s32);
+	.box {
+		display: flex;
+		align-items: center;
+		gap: var(--s4);
+		padding: var(--s6) var(--s8);
+		flex: 1;
+		border-radius: var(--s8);
+	}
+	&.itemChosen {
+		height: var(--s45);
+		.box {
+			padding: 0;
+			padding-left: var(--s6);
+		}
+	}
+	&.isActive .box {
+		background-color: var(--casino-blue-grey-1);
+	}
+	& > .box div {
+		width: var(--s14);
+		height: var(--s14);
+		border-radius: 1000px;
+	}
+	&.all > .box div {
+		display: none;
+	}
+	&.active > .box div {
+		background-color: var(--casino-green);
+	}
+	&.inactive > .box div {
+		background-color: var(--casino-red);
+	}
+	&.placeholder {
+		p {
+			color: var(--casino-grey);
+		}
+	}
+	svg {
+		width: var(--s24);
+		height: var(--s24);
+	}
+}

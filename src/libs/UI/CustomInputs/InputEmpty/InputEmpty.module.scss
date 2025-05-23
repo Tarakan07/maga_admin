@@ -1,0 +1,22 @@
+.wrapInputEmpty {
+	width: 100%;
+	input {
+		width: 100%;
+
+		display: flex;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		color: var(--casino-white);
+		font-family: var(--onest);
+		font-size: var(--s16);
+		font-weight: 400;
+		line-height: 140%;
+
+		border-bottom: 1px solid var(--casino-blue-grey-1);
+
+		&::placeholder {
+			font-size: var(--s16);
+		}
+	}
+}

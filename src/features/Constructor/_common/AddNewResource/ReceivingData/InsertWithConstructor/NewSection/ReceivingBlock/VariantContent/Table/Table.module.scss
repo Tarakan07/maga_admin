@@ -1,0 +1,76 @@
+.wrap {
+	.block {
+		border-radius: var(--s24);
+		border: 1px solid var(--casino-blue-grey-1);
+		overflow: hidden;
+		.tableRow {
+			display: flex;
+			flex-direction: row;
+			border-bottom: 1px solid var(--casino-blue-grey-1);
+			width: 100%;
+			&.tableRowHead {
+				background-color: var(--casino-white-opacity);
+				p {
+					text-transform: uppercase;
+				}
+				> div {
+					input {
+						font-weight: 600;
+					}
+				}
+			}
+			&.tableRowBottom {
+				height: var(--s57);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+			&.tableSettingChild {
+				> div {
+					padding: var(--s16) var(--s24);
+					padding-right: var(--s12);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					input {
+						resize: none;
+						width: 100%;
+						background-color: transparent;
+						color: var(--casino-white);
+						font-size: var(--s18);
+						&::placeholder {
+							color: var(--casino-grey);
+							text-align: center;
+						}
+						&::placeholder {
+							color: var(--casino-light-grey);
+						}
+						&::-webkit-scrollbar {
+							width: var(--s2);
+						}
+
+						&::-webkit-scrollbar-track {
+							background: transparent;
+						}
+
+						&::-webkit-scrollbar-thumb {
+							background: var(--casino-light-grey);
+							border-radius: 12px;
+						}
+					}
+				}
+			}
+
+			.tableBase {
+				min-width: var(--s300);
+				border-right: 1px solid var(--casino-blue-grey-1);
+			}
+			.tableSecondary {
+				width: 100%;
+			}
+		}
+	}
+}

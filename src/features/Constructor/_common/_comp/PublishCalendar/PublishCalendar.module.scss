@@ -1,0 +1,225 @@
+.publishCalendar {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s16);
+	position: relative;
+	.inputCalendar {
+		position: relative;
+		z-index: 10;
+		cursor: pointer;
+		input {
+			cursor: inherit;
+		}
+		svg {
+			position: absolute;
+			z-index: 5;
+			right: var(--s10);
+			top: var(--s12);
+			width: var(--s24);
+			height: var(--s24);
+		}
+	}
+	.timePicker {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		> p {
+			font-size: var(--s24);
+		}
+		&_inputs {
+			display: flex;
+			align-items: center;
+			gap: var(--s5);
+			> div {
+				width: var(--s70);
+				& input {
+					width: 100%;
+					cursor: text;
+					appearance: textfield;
+					-moz-appearance: textfield;
+					&::-webkit-outer-spin-button,
+					&::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+					}
+				}
+			}
+			.dots {
+				font-size: var(--s16);
+			}
+		}
+		.inActive {
+			input {
+				color: var(--casino-dark-grey);
+			}
+		}
+		.edit {
+			cursor: pointer;
+			svg {
+				width: var(--s24);
+				height: var(--s24);
+			}
+		}
+		button {
+			width: var(--s100);
+		}
+	}
+}
+:global {
+	.react-calendar {
+		background-color: var(--casino-bg-blue-purple);
+		border: var(--s2) solid var(--casino-blue-grey-1);
+		border-radius: var(--s12);
+		font-size: var(--s14);
+		font-weight: 700;
+		z-index: 100;
+	}
+	.react-calendar__month-view {
+		> div {
+			> div {
+				display: flex;
+				flex-direction: column;
+				gap: var(--s16);
+			}
+		}
+	}
+	.react-calendar__navigation__label__labelText
+		.react-calendar__navigation__label__labelText--from {
+		background: none;
+	}
+
+	.react-calendar,
+	.react-calendar *,
+	.react-calendar *:before,
+	.react-calendar *:after {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	.react-calendar button {
+		margin: 0;
+		border: 0;
+		outline: none;
+	}
+
+	.react-calendar button:enabled:hover {
+		cursor: pointer;
+	}
+
+	.react-calendar__navigation {
+		color: var(--casino-white);
+		display: flex;
+		gap: var(--s12);
+		padding: var(--s16);
+	}
+
+	.react-calendar__navigation__prev2-button,
+	.react-calendar__navigation__next2-button {
+		display: none;
+	}
+
+	.react-calendar__navigation__label {
+		order: 0;
+		flex-grow: 0;
+		text-align: left;
+	}
+
+	.react-calendar__navigation__arrow {
+		color: var(--casino-white) !important;
+		font-size: var(--s20);
+	}
+
+	.react-calendar__navigation__prev-button {
+		order: 2;
+		color: var(--casino-white);
+	}
+
+	.react-calendar__navigation__next-button {
+		order: 3;
+		color: var(--casino-white);
+	}
+
+	.react-calendar__navigation button {
+		color: var(--casino-white);
+	}
+
+	.react-calendar__month-view__weekdays {
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: var(--s14);
+		color: var(--casino-white);
+		text-transform: none;
+	}
+
+	.react-calendar__month-view__weekdays__weekday {
+		text-transform: none;
+	}
+
+	.react-calendar__month-view__weekdays__weekday abbr {
+		text-decoration: none;
+	}
+
+	.react-calendar__month-view__weekdays__weekday::first-letter {
+		text-transform: uppercase;
+	}
+
+	.react-calendar__month-view__weekNumbers .react-calendar__tile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: var(--s14);
+		font-weight: bold;
+	}
+
+	.react-calendar__month-view__days__day {
+		width: var(--s15);
+		height: var(--s40);
+	}
+
+	.react-calendar__month-view__days__day--weekend {
+		color: #d10000;
+	}
+
+	.react-calendar__year-view .react-calendar__tile,
+	.react-calendar__decade-view .react-calendar__tile,
+	.react-calendar__century-view .react-calendar__tile {
+		padding: var(--s20);
+	}
+
+	.react-calendar__tile {
+		background: none;
+		text-align: center;
+		color: var(--text-color);
+	}
+
+	.react-calendar__tile:disabled {
+		background-color: var(--casino-blue-grey-1) !important;
+	}
+
+	.react-calendar__tile:enabled:hover,
+	.react-calendar__tile:enabled:focus {
+		background: var(--casino-green-dark);
+	}
+
+	.react-calendar__tile--rangeEnd {
+		background: var(--casino-green-dark) !important;
+	}
+
+	.react-calendar__tile--active {
+		background-color: var(--casino-green-dark);
+	}
+
+	.react-calendar__tile--hasActive {
+		background: var(--casino-green-dark);
+	}
+
+	.react-calendar__tile--active:enabled:hover,
+	.react-calendar__tile--active:enabled:focus {
+		background: var(--casino-green-dark);
+	}
+
+	.react-calendar--selectRange .react-calendar__tile--hover {
+		background-color: var(--casino-green-dark);
+	}
+}

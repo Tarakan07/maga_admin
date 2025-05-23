@@ -1,0 +1,127 @@
+.wrap {
+	position: absolute;
+	.block {
+		border-radius: var(--s24);
+		border: 1px solid var(--casino-blue-grey-1);
+		overflow: hidden;
+		.table {
+			display: flex;
+			align-items: center;
+			&.tableRowHead {
+				> div {
+					input {
+						font-weight: 600;
+					}
+				}
+			}
+			.tableColumn{
+				&.hoveredHeader {
+					background-color: var(--casino-white-opacity-1); 
+				}
+				&_inner{
+					display: flex;
+					flex-direction: column;
+					border-right: 1px solid var(--casino-blue-grey-1);
+					.columnHeader{
+						border-bottom: 1px solid var(--casino-blue-grey-1);
+						.deleteUp{
+							position: absolute;
+							transform: translateY(-50%);
+							cursor: pointer;
+						}
+					}
+					.columnData{
+						display: flex;
+						flex-direction: column;
+						.deleteLeft{
+							position: absolute;
+							transform: translateY(50%) translateX(-50%);
+						}
+						.columnCell{
+							width: 100%;
+							border-bottom: 1px solid var(--casino-blue-grey-1);
+							&:last-child {
+								border-bottom: none;
+							}
+						}
+						.hoveredCell{
+							background-color: var(--casino-white-opacity-1);
+						}
+					}
+				}
+			}
+			.tableColumnRight{
+				cursor: pointer;
+				padding: 0 var(--s14);
+				svg{
+					width: var(--s40);
+					height: var(--s40);
+				}
+			}
+		}
+		.tableSettingChild {
+			> div {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				input {
+					padding: var(--s16) var(--s24);
+					resize: none;
+					width: 100%;
+					background-color: transparent;
+					color: var(--casino-white);
+					font-size: var(--s18);
+					&::placeholder {
+						color: var(--casino-grey);
+						text-align: center;
+					}
+					&::placeholder {
+						color: var(--casino-light-grey);
+					}
+					&::-webkit-scrollbar {
+						width: var(--s2);
+					}
+
+					&::-webkit-scrollbar-track {
+						background: transparent;
+					}
+
+					&::-webkit-scrollbar-thumb {
+						background: var(--casino-light-grey);
+						border-radius: var(--s12);
+					}
+				}
+				textarea{
+					padding: var(--s16) var(--s24);
+				}
+			}
+		}
+		.tableRowBottom {
+			height: var(--s57);
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-top: 1px solid var(--casino-blue-grey-1);
+		}
+		.deleteSvg{
+			width: var(--s40);
+			height: var(--s40);
+			background: var(--casino-bg-blue-grey);
+			position: absolute;
+			box-shadow: 0 var(--s4) var(--s4) 0 --casino-bg-blue-purple-05;
+			border-radius: var(--s12);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			svg{
+				width: var(--s24);
+				height: var(--s24);			
+			}
+		}
+	}
+	div{
+		position: initial;
+	}
+}

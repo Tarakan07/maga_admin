@@ -1,0 +1,23 @@
+.wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--s24);
+	.variantEditor {
+		height: var(--s250);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--casino-white-opacity-07);
+		border: 1px dashed var(--casino-white);
+		border-radius: var(--s24);
+		flex: 1;
+		cursor: pointer;
+	}
+	.editor {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		gap: var(--s16);
+	}
+}

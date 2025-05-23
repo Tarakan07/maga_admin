@@ -1,0 +1,30 @@
+.wrap {
+	display: flex;
+	align-items: center;
+	width: var(--s250);
+	border-radius: 1000px;
+	background-color: var(--casino-white-opacity-07);
+	position: relative;
+	.border {
+		height: 100%;
+		transition: 0.3s;
+		position: absolute;
+		width: 50%;
+		border-radius: 1000px;
+		border: 1px solid var(--casino-white);
+		left: 0;
+		&.right {
+			left: 50%;
+		}
+	}
+	.item {
+		flex: 1;
+		padding: var(--s8) 0;
+		justify-content: center;
+		text-align: center;
+		cursor: pointer;
+		p {
+			line-height: 100%;
+		}
+	}
+}

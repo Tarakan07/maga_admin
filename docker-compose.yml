@@ -1,0 +1,9 @@
+services:
+  casino_track_admin_test:
+    build: ./
+    restart: always
+    container_name: front_admin
+    ports:
+      - "127.0.0.1:3001:3000"
+    network_mode: "bridge"
+# docker-compose up -d --build casino_track_admin

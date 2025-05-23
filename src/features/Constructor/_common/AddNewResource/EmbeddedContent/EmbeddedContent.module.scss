@@ -1,0 +1,13 @@
+.receiving {
+	padding: var(--s18);
+	display: flex;
+	flex-direction: column;
+	gap: var(--s24);
+	border-radius: var(--s24);
+	background-color: var(--casino-bg-blue-purple);
+	.elements {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--s12);
+	}
+}

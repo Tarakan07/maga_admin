@@ -1,0 +1,21 @@
+.header {
+	margin-top: var(--s16);
+	background-color: var(--casino-bg-blue-purple);
+	padding: var(--s16) var(--s24);
+	border-radius: var(--s16);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.label {
+		svg {
+			width: var(--s210);
+			height: var(--s30);
+		}
+	}
+
+	.setting {
+		display: flex;
+		align-items: center;
+		gap: var(--s40);
+	}
+}

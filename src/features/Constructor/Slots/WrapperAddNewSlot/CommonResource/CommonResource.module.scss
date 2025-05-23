@@ -1,0 +1,47 @@
+.common {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s24);
+	.wrap{
+		display: flex;
+		flex-direction: column;
+		gap: var(--s16);
+		.inputs {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--s16);
+			.left, .right{
+				width: calc(50% - var(--s8));
+				display: flex;
+				flex-direction: column;
+				gap: var(--s16);
+			}
+		}
+	}
+	.selects {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s16);
+	}
+	.inputs_bonuses {
+		display: flex;
+		gap: var(--s24);
+		.bonus_title {
+			flex-basis: 35%;
+		}
+		.bonus_description {
+			flex-basis: 65%;
+		}
+	}
+}
+
+.itemWithIcon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--s4);
+	img {
+		width: var(--s24);
+		height: var(--s24);
+	}
+}

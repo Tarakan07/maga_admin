@@ -1,0 +1,37 @@
+.seo {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s24);
+	.uploads {
+		display: flex;
+		gap: var(--s12);
+		.inputFile_block {
+			display: flex;
+			flex-direction: column;
+			gap: var(--s6);
+			> p {
+				font-size: var(--s16);
+			}
+			.inputFile {
+				width: var(--s200);
+				height: var(--s200);
+			}
+		}
+	}
+
+	.inputs_block {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s16);
+		.inputs {
+			display: flex;
+			gap: var(--s12);
+			.inputs_promo {
+				flex-basis: 50%;
+			}
+			.inputs_link {
+				flex-basis: 50%;
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: var(--s24);
+    .topics{
+        display: flex;
+        flex-direction: column;
+        gap: var(--s24);
+        .textarea{
+            display: flex;
+            flex-direction: column;
+            gap: var(--s12);
+            >textarea{
+                height: var(--s200);
+            }
+        }
+    }
+}

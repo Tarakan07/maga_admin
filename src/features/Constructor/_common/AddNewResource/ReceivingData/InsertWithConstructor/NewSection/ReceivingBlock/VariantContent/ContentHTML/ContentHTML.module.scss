@@ -1,0 +1,32 @@
+.wrap {
+	min-height: var(--s150);
+	height: 100%;
+	display: flex;
+	.quill {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+}
+
+:global {
+	.ql-container {
+		flex: 1;
+		.ql-editor {
+			overflow-y: scroll;
+			max-height: var(--s480);
+
+			&::-webkit-scrollbar {
+				width: var(--s6);
+			}
+
+			&::-webkit-scrollbar-track {
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: var(--casino-grey);
+				border-radius: 12px;
+			}
+		}
+	}
+}

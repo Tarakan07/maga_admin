@@ -1,0 +1,51 @@
+.wrap {
+	min-height: var(--s180);
+	height: 100%;
+	display: flex;
+	.quill {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+}
+
+:global {
+	.ql-toolbar.ql-snow{
+		border: 1px solid var(--casino-blue-grey-1);
+		border-radius: var(--s12) var(--s12) 0 0;
+	}
+	.ql-container.ql-snow{
+		border: 1px solid var(--casino-blue-grey-1);
+		border-radius: 0 0 var(--s12) var(--s12);
+	}
+	.ql-container {
+		flex: 1;
+		transition: 0s;
+		.ql-editor {
+			overflow-y: scroll;
+			max-height: var(--s480);
+			font-size: var(--s16);
+			font-family: var(--onest);
+			&::-webkit-scrollbar {
+				width: var(--s6);
+			}
+
+			&::-webkit-scrollbar-track {
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: var(--casino-grey);
+				border-radius: 12px;
+			}
+		}
+		.ql-editor[data-placeholder]{
+			&::before{
+				color: var(--casino-grey);
+				font-size: var(--s16);
+				font-family: var(--onest);
+				font-style: normal;
+				transition: 0s;
+			}
+		}
+	}
+}

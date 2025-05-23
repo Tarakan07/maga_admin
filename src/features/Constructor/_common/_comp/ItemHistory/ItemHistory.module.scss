@@ -1,0 +1,69 @@
+.item {
+	width: var(--s180);
+	display: flex;
+	flex-direction: column;
+	gap: var(--s12);
+	justify-content: flex-start;
+	position: relative;
+	padding: var(--s16);
+	border: 1px solid var(--casino-blue-grey-1);
+	border-radius: var(--s24);
+	background: linear-gradient(
+			226deg,
+			rgba(255, 255, 255, 0) 25.23%,
+			rgba(30, 32, 52, 0.16) 143.65%
+		),
+		rgba(30, 32, 52, 0.4);
+}
+.item > img {
+	width: var(--s145);
+	height: var(--s145);
+}
+.wrapStatus {
+	.status {
+		display: flex;
+		align-items: center;
+		padding: var(--s5) var(--s8);
+		border-radius: 1000px;
+		gap: var(--s4);
+		width: max-content;
+		> div {
+			width: var(--s14);
+			height: var(--s14);
+			border-radius: 1000px;
+		}
+		&.active {
+			background: var(--casino-green-opacity-2);
+			> div {
+				background: var(--casino-green);
+			}
+		}
+		&.inactive {
+			background: var(--casino-red-opacity-2);
+
+			> div {
+				background: var(--casino-red);
+			}
+		}
+	}
+}
+
+.setting {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: var(--s8);
+	right: var(--s9);
+	gap: var(--s16);
+	border-radius: 12px;
+	background: var(--casino-bg-blue-grey);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	padding: var(--s8) var(--s12);
+	> div {
+		cursor: pointer;
+	}
+	svg{
+		width: var(--s24);
+		height: var(--s24);
+	}
+}
