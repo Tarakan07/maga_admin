@@ -1,4 +1,4 @@
-const BASE_PROD = 'https://lk.casino-track.com/-api-'
+const BASE_PROD = 'http://89.221.203.201:5002/api/'
 const BASE_LEVA_URL = 'https://lk.leva-ndar.ru/-api-'
 
 const BASE_CDN_LEVA = 'https://s3.leva-ndar.ru/images'
