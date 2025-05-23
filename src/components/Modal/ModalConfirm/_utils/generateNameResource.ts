@@ -12,12 +12,9 @@ export const generateNameResource = ({
 }: TParams): string => {
 	const resourceTitles: Record<TVariantResource, Record<TLangKey, string>> = {
 		casino: { ru: 'Казино', en: 'Casino' },
-		slots: { ru: 'Слоты', en: 'Slots' },
 		news: { ru: 'Новость', en: 'News' },
 		articles: { ru: 'Статью', en: 'Articles' },
-		history: { ru: 'Историю', en: 'History' },
 		category: { ru: 'Категорию', en: 'Category' },
-		providers: { ru: 'Провайдер', en: 'Provider' },
 	}
 	return resourceTitles[variantResource][lang]
 }

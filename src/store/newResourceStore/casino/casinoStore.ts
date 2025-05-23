@@ -260,25 +260,25 @@ export const useCasinoStore = create<
 												dataRes?.grades.find(
 													(grade) => grade.label === 'Надежность'
 												)?.count
-											) || '0',
+											) || '2',
 										playerRating:
 											String(
 												dataRes?.grades.find(
 													(grade) => grade.label === 'Оценка игроков'
 												)?.count
-											) || '0',
+											) || '2',
 										withdrawal:
 											String(
 												dataRes?.grades.find(
 													(grade) => grade.label === 'Вывод средств'
 												)?.count
-											) || '0',
+											) || '2',
 										speed:
 											String(
 												dataRes?.grades.find(
 													(grade) => grade.label === 'Скорость'
 												)?.count
-											) || '0',
+											) || '2',
 									},
 								},
 								reviewStore:

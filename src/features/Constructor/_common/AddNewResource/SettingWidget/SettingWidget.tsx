@@ -36,11 +36,8 @@ const SettingWidget: FC<TProps> = ({
 	const removeText = useMemo(() => {
 		if (variantResource === 'articles') return 'статью'
 		else if (variantResource === 'casino') return 'казино'
-		else if (variantResource === 'history') return 'историю'
 		else if (variantResource === 'news') return 'новость'
-		else if (variantResource === 'slots') return 'слот'
 		else if (variantResource === 'category') return 'категорию'
-		else if (variantResource === 'providers') return 'провайдер'
 	}, [variantResource, editFor])
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -156,10 +153,8 @@ const SettingWidget: FC<TProps> = ({
 											(editFor === 'ADD' || editFor === 'UPDATE') &&
 											(variantResource === 'casino' ||
 												variantResource === 'news' ||
-												variantResource === 'slots' ||
 												variantResource === 'category' ||
-												variantResource === 'articles' ||
-												variantResource === 'providers')
+												variantResource === 'articles')
 										}
 									/>
 								</div>
@@ -202,26 +197,23 @@ const SettingWidget: FC<TProps> = ({
 					</P>
 				</div>
 			</div>
-			{variantResource !== 'casino' &&
-				variantResource !== 'slots' &&
-				variantResource !== 'category' &&
-				variantResource !== 'providers' && (
-					<div className={s.setting}>
-						<P size="m" weight={600}>
-							{getLocalization('Дата и время публикации')}
-						</P>
-						<PublishCalendar
-							value={settingObj[variantResource].publish_at}
-							onChange={(e) =>
-								updateSetting({
-									_key: 'publish_at',
-									value: e,
-									resource: variantResource,
-								})
-							}
-						/>
-					</div>
-				)}
+			{variantResource !== 'casino' && variantResource !== 'category' && (
+				<div className={s.setting}>
+					<P size="m" weight={600}>
+						{getLocalization('Дата и время публикации')}
+					</P>
+					<PublishCalendar
+						value={settingObj[variantResource].publish_at}
+						onChange={(e) =>
+							updateSetting({
+								_key: 'publish_at',
+								value: e,
+								resource: variantResource,
+							})
+						}
+					/>
+				</div>
+			)}
 		</>
 	)
 }

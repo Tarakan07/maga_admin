@@ -1,4 +1,9 @@
-import { TProvidersBodyEdit, TProvidersCreateReq, TProvidersDeleteReq, TProvidersPatchReq } from '@/services/API/providers/providers.type'
+import {
+	TProvidersBodyEdit,
+	TProvidersCreateReq,
+	TProvidersDeleteReq,
+	TProvidersPatchReq,
+} from '@/services/API/providers/providers.type'
 import { THandleEditParams } from '../CatVariantResource/CatVariantResource.type'
 
 type TParams = {
@@ -22,7 +27,7 @@ export const useEditCat = ({ bindActions }: TParams) => {
 				hidden,
 				link,
 				title,
-                translations
+				translations,
 			})
 		}
 		if (variantEdit === 'update') {

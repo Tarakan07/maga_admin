@@ -6,7 +6,6 @@ import s from './WrapperCatItemEdit.module.scss'
 import { TCatEditProps } from '../../../WrapperCat.type'
 import CatVariantEdit from '../CatVariantEdit/CatVariantEdit'
 import { THandleEditParams } from '../../CatVariantResource/CatVariantResource.type'
-import { routes } from '@/constants/routes'
 type TProps = {
 	editActivity: TCatEditProps
 	count: number
@@ -19,7 +18,15 @@ const WrapperCatItemEdit: FC<TProps> = ({
 	handleEdit,
 	count,
 }) => {
-	const { _key, changeEditCat, isActiveEdit, isCanEdit, label, add_link, update_link } = editActivity
+	const {
+		_key,
+		changeEditCat,
+		isActiveEdit,
+		isCanEdit,
+		label,
+		add_link,
+		update_link,
+	} = editActivity
 	return (
 		<div className={s.container}>
 			<div className={cn(s.wrap, { [s.isOpen]: isActiveEdit })}>
@@ -35,9 +42,7 @@ const WrapperCatItemEdit: FC<TProps> = ({
 						<P color="grey">{count}</P>
 					</div>
 				</div>
-				<CatVariantEdit 
-					{...{ handleEdit, add_link, update_link }} 
-				/>
+				<CatVariantEdit {...{ handleEdit, add_link, update_link }} />
 			</div>
 			{isActiveEdit && children}
 		</div>

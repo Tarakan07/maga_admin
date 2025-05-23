@@ -1,6 +1,19 @@
-import { API } from "@/services/helpers"
-import { TParamsAddCasinosToProviderReq, TParamsAddProviderToCasinoRes, TParamsAddProviderToSlotRes, TParamsAddSlotsToProviderReq, TParamsProvidersReq, TProvidersBodyEdit, TProvidersCreateReq, TProvidersCreateRes, TProvidersDeleteReq, TProvidersGetReq, TProvidersPatchReq, TProvidersPatchRes, TProvidersRes } from "./providers.type"
-import { SERVICES } from "@/constants/api"
+import { API } from '@/services/helpers'
+import {
+	TParamsAddCasinosToProviderReq,
+	TParamsAddProviderToCasinoRes,
+	TParamsAddProviderToSlotRes,
+	TParamsAddSlotsToProviderReq,
+	TParamsProvidersReq,
+	TProvidersBodyEdit,
+	TProvidersCreateReq,
+	TProvidersCreateRes,
+	TProvidersDeleteReq,
+	TProvidersGetReq,
+	TProvidersPatchReq,
+	TProvidersPatchRes,
+	TProvidersRes,
+} from './providers.type'
 
 const BASE_URL = '/v1/providers'
 
@@ -29,9 +42,7 @@ export const getProvidersById = async ({
 	id,
 }: TProvidersGetReq): Promise<TProvidersPatchRes> => {
 	try {
-		const response = await API.get<TProvidersBodyEdit>(
-			`${BASE_URL}/${id}`,
-		)
+		const response = await API.get<TProvidersBodyEdit>(`${BASE_URL}/${id}`)
 		return response.data
 	} catch (error) {
 		throw new Error('get category by id error')
@@ -43,7 +54,7 @@ export const createProvider = async (
 ): Promise<TProvidersCreateRes> => {
 	try {
 		const response = await API.post<
-            TProvidersCreateReq,
+			TProvidersCreateReq,
 			{ data: TProvidersCreateRes }
 		>(BASE_URL, provider)
 		return response.data

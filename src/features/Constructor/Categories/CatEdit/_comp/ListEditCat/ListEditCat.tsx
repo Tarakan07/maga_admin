@@ -2,11 +2,11 @@ import { FC, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { P } from '@/libs/UI/CustomTags'
 import PlusSvg from '@/_assets/svg/PlusSvg'
+import { routes } from '@/constants/routes'
 import { TCategoriesRes } from '@/services/API/categories/categories.type'
 import s from './ListEditCat.module.scss'
 import ItemEditCat from './ItemEditCat/ItemEditCat'
 import { THandleEditParams } from '../../CatVariantResource/CatVariantResource.type'
-import { routes } from '@/constants/routes'
 
 type TProps = {
 	categories: TCategoriesRes[]
@@ -21,10 +21,7 @@ const ListEditCat: FC<TProps> = ({ categories, handleEdit }) => {
 	return (
 		<div className={s.container}>
 			{!!!categories.length && (
-				<Link 
-					to={routes.ADD_CATEGORY}
-					className={s.empty}
-				>
+				<Link to={routes.ADD_CATEGORY} className={s.empty}>
 					<PlusSvg />
 					<P weight={500} color="green">
 						Добавить

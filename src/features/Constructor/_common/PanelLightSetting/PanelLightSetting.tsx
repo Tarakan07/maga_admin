@@ -2,7 +2,6 @@ import { FC, useCallback, useState } from 'react'
 import { InputSearch } from '@/libs/UI'
 import { useInput } from '@/libs/hooks/use-input'
 import { TVariantResource } from '@/store/newResourceStore/type'
-import LangSelector from '@/components/LangSelector/LangSelector'
 import { useFilter } from '@/libs/context/FilterContext/FilterContext'
 import { TLangKey, useLanguage } from '@/libs/context/LanguageProvider'
 import StatusFilter from './StatusFilter'
@@ -92,7 +91,7 @@ const PanelLightSetting: FC<TProps> = ({ bindLang, variantContent }) => {
 						updateDataSelector={(key) => updateDataSelector(key, 'status')}
 						keyName={'status'}
 					/>
-					{variantContent !== 'casino' && variantContent !== 'slots' &&  variantContent !== 'providers' && (
+					{variantContent !== 'casino' && (
 						<PublicatedFilter
 							dataSelector={selectors.publicated}
 							updateDataSelector={(key) =>
@@ -102,7 +101,7 @@ const PanelLightSetting: FC<TProps> = ({ bindLang, variantContent }) => {
 						/>
 					)}
 					<AscDescFilter />
-					{variantContent !== 'casino' && variantContent !== 'slots' && variantContent !== 'providers' && (
+					{variantContent !== 'casino' && (
 						<FilterCalendar onReset={handleResetCalendar} />
 					)}
 					{isThrow && (
@@ -113,18 +112,6 @@ const PanelLightSetting: FC<TProps> = ({ bindLang, variantContent }) => {
 				</div>
 				<div className={s.right}>
 					<InputSearch {...{ onChangeText, value }} placeholder="Cats..." />
-					{variantContent !== 'providers' && (
-						<div className={s.lang}>
-							<LangSelector
-								activeLang={bindLang.lang || 'ru'}
-								callback={(lang) => {
-									if (bindLang.callbackLang) {
-										bindLang.callbackLang(lang)
-									}
-								}}
-								/>
-						</div>
-					)}
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,6 @@
 import { Input } from '@/libs/UI'
 import { useSeoStore } from '@/store/newResourceStore/casino'
 import UploadImage from '@/features/Constructor/_common/_comp/UploadImage/UploadImage'
-import BindIdInput from '@/features/Constructor/_common/_comp/BindIdInput/BindIdInput'
 import { useSettingStore } from '@/store/newResourceStore/_common/setting/settingStore'
 import s from './SeoResource.module.scss'
 
@@ -31,7 +30,7 @@ const SeoResource = () => {
 			<div className={s.inputs_block}>
 				<p>Meta {settings.getCurrentLang('casino').toUpperCase()}</p>
 				<div className={s.inputs}>
-					<BindIdInput
+					{/* <BindIdInput
 						placeholder="Связывающий id "
 						value={seoData.bind_id || ''}
 						onChange={(e) => {
@@ -41,7 +40,7 @@ const SeoResource = () => {
 							})
 						}}
 						placeholder_type="is_shown"
-					/>
+					/> */}
 
 					<Input
 						placeholder="Ссылка"

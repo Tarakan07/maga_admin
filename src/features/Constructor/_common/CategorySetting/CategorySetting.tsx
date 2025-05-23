@@ -1,44 +1,37 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import cn from 'classnames'
 import { P } from '@/libs/UI/CustomTags'
 import { useCascade } from '@/libs/hooks/use-cascade'
 import { ArrowDropDownSvg } from '@/_assets/svg/arrows'
+import { TSlotBody } from '@/services/API/slots/slots.type'
 import { TVariantResource } from '@/store/newResourceStore/type'
+import { TProvidersBody } from '@/services/API/providers/providers.type'
 import { useCategoriesStore } from '@/store/newResourceStore/_common/categories/categoriesStore'
 import s from './CategorySetting.module.scss'
 import CategoryItem from './CategoryItem/CategoryItem'
 import { TGetSizeAddedParams, TToggleCategory } from './CategorySetting.type'
 import { VariantNewResourceContext } from '../AddNewResource/ReceivingData/_context/VariantNewResourceContext'
-import { TProvidersBody } from '@/services/API/providers/providers.type'
-import Select from '../_comp/Select/Select'
-import { useCommonStore } from '@/store/newResourceStore/casino'
-import { TSlotBody } from '@/services/API/slots/slots.type'
-import { useFetchConfigSlots } from '../../Casino/_hooks/use-slots'
-import { useFetchConfigProviders } from '../../Casino/_hooks/use-providers'
 
 type TProps = {
-	selectedProviders: TProvidersBody[]
+	selectedProviders: TProvidersBody[] | null
 	handleChangeProviders: ({ value }: { value: TProvidersBody }) => void
-	selectedSlots: TSlotBody[]
+	selectedSlots: TSlotBody[] | null
 	handleChangeSlots: ({ value }: { value: TSlotBody }) => void
 }
 
-const CategorySetting: React.FC<TProps> = ({ 
-	selectedProviders, 
+const CategorySetting: React.FC<TProps> = ({
+	selectedProviders,
 	selectedSlots,
 	handleChangeProviders,
-	handleChangeSlots 
+	handleChangeSlots,
 }) => {
-	//Оставить этот компонент в _comp, в casino создать отдельную страницу (внутри папки казино) для категорий, провайдеров и слотов 
+	//Оставить этот компонент в _comp, в casino создать отдельную страницу (внутри папки казино) для категорий, провайдеров и слотов
 	const { variantResource } = useContext(VariantNewResourceContext)
 	const label = useRef<Record<TVariantResource, string>>({
 		articles: 'Статьи',
 		casino: 'Казино',
-		slots: 'Слоты',
-		history: 'Истории',
 		news: 'Новости',
 		category: 'Категории',
-		providers: 'Провайдеры',
 	}).current
 
 	const {
@@ -55,8 +48,6 @@ const CategorySetting: React.FC<TProps> = ({
 		)
 	).current
 	///
-	const { allSlots } = useFetchConfigSlots()
-	const { allProviders } = useFetchConfigProviders()
 
 	const toggleCategorySelection = ({ type, category }: TToggleCategory) => {
 		if (type === 'add') {
@@ -134,30 +125,30 @@ const CategorySetting: React.FC<TProps> = ({
 					</div>
 				)}
 			</div>
-				<div className={s.selects}>
-					<Select
-						label="Провайдеры"
-						dataAdded={selectedProviders}
-						value={allProviders}
-						DataComponent={(e) => <AddedIconArray title={e.item.title} />}
-						ValueComponent={(e) => <FeatureIconArray title={e.item.title} />}
-						placeholder="Провайдеры"
-						onGetTextForSearch={(e) => e.title}
-						onChange={(e) => handleChangeProviders({ value: e })}
-						isWithSearch={true}
-					/>
-					<Select
-						label="Слоты"
-						dataAdded={selectedSlots}
-						value={allSlots}
-						DataComponent={(e) => <AddedIconArray title={e.item.name} />}
-						ValueComponent={(e) => <FeatureIconArray title={e.item.name} />}
-						placeholder="Слоты"
-						onGetTextForSearch={(e) => e.name}
-						onChange={(e) => handleChangeSlots({ value: e })}
-						isWithSearch={true}
-					/>
-				</div>
+			<div className={s.selects}>
+				{/* <Select
+					label="Провайдеры"
+					dataAdded={selectedProviders}
+					value={allProviders}
+					DataComponent={(e) => <AddedIconArray title={e.item.title} />}
+					ValueComponent={(e) => <FeatureIconArray title={e.item.title} />}
+					placeholder="Провайдеры"
+					onGetTextForSearch={(e) => e.title}
+					onChange={(e) => handleChangeProviders({ value: e })}
+					isWithSearch={true}
+				/> */}
+				{/* <Select
+					label="Слоты"
+					dataAdded={selectedSlots}
+					value={allSlots}
+					DataComponent={(e) => <AddedIconArray title={e.item.name} />}
+					ValueComponent={(e) => <FeatureIconArray title={e.item.name} />}
+					placeholder="Слоты"
+					onGetTextForSearch={(e) => e.name}
+					onChange={(e) => handleChangeSlots({ value: e })}
+					isWithSearch={true}
+				/> */}
+			</div>
 		</div>
 	)
 }

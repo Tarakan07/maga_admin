@@ -68,9 +68,7 @@ export const getCategoryById = async ({
 	id,
 }: TCategoriesGetReq): Promise<TCategoriesPatchRes> => {
 	try {
-		const response = await API.get<TCategoriesBodyEdit>(
-			`${BASE_URL}/${id}`,
-		)
+		const response = await API.get<TCategoriesBodyEdit>(`${BASE_URL}/${id}`)
 		return response.data
 	} catch (error) {
 		throw new Error('get category by id error')
@@ -78,7 +76,7 @@ export const getCategoryById = async ({
 }
 
 export const updateCategoryById = async ({
-	 id,
+	id,
 	_body: body,
 }: TCategoriesPatchReq): Promise<TCategoriesPatchRes> => {
 	try {

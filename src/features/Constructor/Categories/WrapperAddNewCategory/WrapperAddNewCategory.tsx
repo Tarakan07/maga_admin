@@ -24,12 +24,16 @@ import SeoResource from './SeoResource/SeoResource'
 import s from './WrapperAddNewCategory.module.scss'
 import { TVariantOpenPage } from '../../Constructor.type'
 import WrapperAddNewResource from '../../_common/_comp/WrapperAddNewResource'
+import { INIT_DATA } from '../WrapperVariantResource/WrapperAddNewCategory/const'
 import ReceivingData from '../../_common/AddNewResource/ReceivingData/ReceivingData'
 import SettingWidget from '../../_common/AddNewResource/SettingWidget/SettingWidget'
 import EmbeddedContent from '../../_common/AddNewResource/EmbeddedContent/EmbeddedContent'
 import { VariantNewResourceContext } from '../../_common/AddNewResource/ReceivingData/_context/VariantNewResourceContext'
-import { TStateModalCat, TCategoryJsonObj, THandleChangeFromParams } from '../WrapperVariantResource/WrapperAddNewCategory/type'
-import { INIT_DATA } from '../WrapperVariantResource/WrapperAddNewCategory/const'
+import {
+	TStateModalCat,
+	TCategoryJsonObj,
+	THandleChangeFromParams,
+} from '../WrapperVariantResource/WrapperAddNewCategory/type'
 
 const INIT_TABS: TTabItem<TCategoriesKeysTabs>[] = [
 	{

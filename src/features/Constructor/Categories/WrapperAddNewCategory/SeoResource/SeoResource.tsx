@@ -3,7 +3,10 @@ import { Input } from '@/libs/UI'
 import { P } from '@/libs/UI/CustomTags'
 import { useLang } from '@/libs/context/LocalLangContext/LocalLangContext'
 import s from './SeoResource.module.scss'
-import { TStateModalCat, THandleChangeFromParams } from '../../WrapperVariantResource/WrapperAddNewCategory/type'
+import {
+	TStateModalCat,
+	THandleChangeFromParams,
+} from '../../WrapperVariantResource/WrapperAddNewCategory/type'
 
 type TProps = {
 	formData: TStateModalCat

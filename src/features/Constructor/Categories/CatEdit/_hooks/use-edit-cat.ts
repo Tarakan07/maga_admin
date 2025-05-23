@@ -1,7 +1,6 @@
 import {
 	TCategoriesBodyEdit,
 	TCategoriesCreateReq,
-	TCategoriesCreateRes,
 	TCategoriesDeleteReq,
 	TCategoriesPatchReq,
 } from '@/services/API/categories/categories.type'
@@ -17,13 +16,15 @@ type TParams = {
 export const useEditCat = ({ bindActions }: TParams) => {
 	const handleEdit = (params: THandleEditParams) => {
 		const { data, variantEdit } = params
-		const { link, id, parent_id, title, translations } = data as TCategoriesBodyEdit
+		const { link, id, parent_id, title, translations } =
+			data as TCategoriesBodyEdit
 		if (variantEdit === 'remove') {
 			return bindActions.deleteItem({
 				id,
 			})
 		}
 		if (variantEdit === 'create') {
+			console.log(link, parent_id, title, translations)
 			return bindActions.createItem({
 				link,
 				parent_id,

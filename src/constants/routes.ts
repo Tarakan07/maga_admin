@@ -1,10 +1,4 @@
-import {
-	ArticlesSvg,
-	HistorySvg,
-	NewsSvg,
-	RobotsSvg,
-	TagsSvg,
-} from '@/_assets/svg/nav'
+import { ArticlesSvg, TagsSvg } from '@/_assets/svg/nav'
 
 export const INDEX_PAGE = '/'
 const ADMIN_PAGE = 'admin'
@@ -69,44 +63,35 @@ export const navigate = [
 		link: CASINO,
 		icon: ArticlesSvg,
 	},
-	{
-		name: 'Новости',
-		link: NEWS,
-		icon: NewsSvg,
-	},
-	{
-		name: 'Статьи',
-		link: ARTICLE,
-		icon: ArticlesSvg,
-	},
-	{
-		name: 'Истории',
-		link: HISTORY,
-		icon: HistorySvg,
-	},
-	{
-		name: 'Слоты',
-		link: SLOTS,
-		icon: HistorySvg,
-	},
+	// {
+	// 	name: 'Новости',
+	// 	link: NEWS,
+	// 	icon: NewsSvg,
+	// },
+	// {
+	// 	name: 'Статьи',
+	// 	link: ARTICLE,
+	// 	icon: ArticlesSvg,
+	// },
+
 	// {
 	// 	name: 'Провайдеры',
 	// 	link: PROVIDERS,
 	// 	icon: HistorySvg,
 	// },
-	{
-		name: 'Robots.txt',
-		link: routes.SETTING_ROBOTS,
-		icon: RobotsSvg,
-	},
+	// {
+	// 	name: 'Robots.txt',
+	// 	link: routes.SETTING_ROBOTS,
+	// 	icon: RobotsSvg,
+	// },
 	{
 		name: 'Категории',
 		link: routes.CATEGORIES,
 		icon: TagsSvg,
 	},
-	{
-		name: 'Генерация',
-		link: routes.OPENAI,
-		icon: ArticlesSvg,
-	},
+	// {
+	// 	name: 'Генерация',
+	// 	link: routes.OPENAI,
+	// 	icon: ArticlesSvg,
+	// },
 ]

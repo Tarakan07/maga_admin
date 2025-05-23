@@ -1,11 +1,9 @@
 import { useState } from 'react'
+import { routes } from '@/constants/routes'
 import s from './CatEdit.module.scss'
 import CatCasino from './CatVariantResource/CatCasino'
 import CatArticle from './CatVariantResource/CatArticle'
 import { TCatState, TEditCatParams } from '../WrapperCat.type'
-import CatProvider from './CatVariantResource/CatGenre'
-import { routes } from '@/constants/routes'
-import CatGenre from './CatVariantResource/CatGenre'
 
 const INIT_STATE_CAT: TCatState[] = [
 	{
@@ -24,14 +22,7 @@ const INIT_STATE_CAT: TCatState[] = [
 		add_link: routes.ADD_CATEGORY,
 		update_link: routes.UPDATE_CATEGORY,
 	},
-	{
-		_key: 'genres',
-		isCanEdit: true,
-		label: 'Жанры',
-		isActiveEdit: false,
-		add_link: routes.ADD_GENRE,
-		update_link: routes.UPDATE_GENRE,
-	},
+
 	{
 		_key: 'news',
 		isCanEdit: true,
@@ -68,8 +59,6 @@ const CatEdit = () => {
 					return <CatCasino key={item._key} {...item} {...{ changeEditCat }} />
 				} else if (item._key === 'articles') {
 					return <CatArticle key={item._key} {...item} {...{ changeEditCat }} />
-				} else if (item._key === 'genres') {
-					return <CatGenre key={item._key} {...item} {...{ changeEditCat }} />
 				}
 				return null
 			})}

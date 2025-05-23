@@ -1,16 +1,33 @@
-import { useMutation, useQuery, useQueryClient } from "react-query"
-import { createProvider, deleteProviderById, getAllProviders, getCasinosForProviderById, getProvidersById, getSlotsForProviderById, updateCasinosForProviderById, updateProviderById, updateSlotsForProviderById } from "./providers"
-import { toast } from "react-toastify"
-import { TParamsAddCasinosToProviderReq, TParamsAddSlotsToProviderReq, TParamsProvidersReq, TProvidersCreateReq, TProvidersDeleteReq, TProvidersGetReq, TProvidersPatchReq } from "./providers.type"
+import { toast } from 'react-toastify'
+import { useMutation, useQuery, useQueryClient } from 'react-query'
+import {
+	TParamsAddCasinosToProviderReq,
+	TParamsAddSlotsToProviderReq,
+	TParamsProvidersReq,
+	TProvidersCreateReq,
+	TProvidersDeleteReq,
+	TProvidersGetReq,
+	TProvidersPatchReq,
+} from './providers.type'
+import {
+	createProvider,
+	deleteProviderById,
+	getAllProviders,
+	getCasinosForProviderById,
+	getProvidersById,
+	getSlotsForProviderById,
+	updateCasinosForProviderById,
+	updateProviderById,
+	updateSlotsForProviderById,
+} from './providers'
 
 export const useGetAllProviders = (params: TParamsProvidersReq) => {
-    return useQuery('allProviders', () => getAllProviders(params), {
-        onSuccess: (data) => {
+	return useQuery('allProviders', () => getAllProviders(params), {
+		onSuccess: (data) => {},
+		onError: (error) => {
+			console.log('fetch providers error', error)
 		},
-        onError: (error) => {
-            console.log('fetch providers error', error)
-        },
-    })
+	})
 }
 
 export const useCreateProvider = () => {
@@ -93,8 +110,7 @@ export const useGetSlotsForProviderById = () => {
 			return data
 		},
 		{
-			onSuccess: (data) => {
-			},
+			onSuccess: (data) => {},
 			onError: (error) => {
 				console.log('get slots for provider error:', error)
 			},

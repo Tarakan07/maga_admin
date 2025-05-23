@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import cn from 'classnames'
 import { P } from '@/libs/UI/CustomTags'
+import { routes } from '@/constants/routes'
 import FrontLineSvg from '@/_assets/svg/frontLineSvg'
 import { useCascade } from '@/libs/hooks/use-cascade'
 import { ArrowDropDownSvg } from '@/_assets/svg/arrows'
@@ -8,7 +9,6 @@ import { TCategoriesRes } from '@/services/API/categories/categories.type'
 import s from './ItemEditCat.module.scss'
 import CatVariantEdit from '../../CatVariantEdit'
 import { THandleEditParams } from '../../../CatVariantResource/CatVariantResource.type'
-import { routes } from '@/constants/routes'
 
 type TProps = {
 	category: TCategoriesRes
@@ -51,10 +51,11 @@ const ItemEditCat: FC<TProps> = ({
 					</div>
 				</div>
 				<div className={s.setting}>
-					<CatVariantEdit 
-						{...{ category, handleEdit }} 
-						update_link={routes.UPDATE_CATEGORY} 
-						add_link={routes.ADD_CATEGORY} 
+					<CatVariantEdit
+						{...{ category, handleEdit }}
+						update_link={routes.UPDATE_CATEGORY}
+						add_link={routes.ADD_CATEGORY}
+						child={true}
 					/>
 				</div>
 			</div>

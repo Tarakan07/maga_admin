@@ -29,13 +29,11 @@ import s from './WrapperAddNewCasino.module.scss'
 import SeoResource from './SeoResource/SeoResource'
 import { HeaderActions } from '../../_common/_comp'
 import { TVariantOpenPage } from '../../Constructor.type'
-import { useFetchConfigSlots } from '../_hooks/use-slots'
 import { useManipulationData } from '../../_common/_hooks'
 import { TTabItem } from '../../../../components/Tabs/type'
 import CategorySetting from '../../_common/CategorySetting'
 import CommonResource from './CommonResource/CommonResource'
 import { useFetchConfigPayments } from '../_hooks/use-payments'
-import { useFetchConfigProviders } from '../_hooks/use-providers'
 import WrapperAddNewResource from '../../_common/_comp/WrapperAddNewResource'
 import { TEditingData } from '../../_common/_hooks/use-manipulation-data/type'
 import ReceivingData from '../../_common/AddNewResource/ReceivingData/ReceivingData'
@@ -50,11 +48,11 @@ const INIT_TABS: TTabItem<TCasinoKeysTabs>[] = [
 		label: 'SEO',
 		isActive: true,
 	},
-	{
-		key: 'common',
-		label: 'Общее',
-		isActive: false,
-	},
+	// {
+	// 	key: 'common',
+	// 	label: 'Общее',
+	// 	isActive: false,
+	// },
 	{
 		key: 'review',
 		label: 'Обзор',
@@ -65,11 +63,11 @@ const INIT_TABS: TTabItem<TCasinoKeysTabs>[] = [
 		label: 'Категории',
 		isActive: false,
 	},
-	{
-		key: 'bonus',
-		label: 'Бонусы',
-		isActive: false,
-	},
+	// {
+	// 	key: 'bonus',
+	// 	label: 'Бонусы',
+	// 	isActive: false,
+	// },
 ]
 const WrapperAddNewCasino: FC<TVariantOpenPage> = ({
 	editFor,
@@ -117,8 +115,6 @@ const WrapperAddNewCasino: FC<TVariantOpenPage> = ({
 		useSetCategoriesByResourceId()
 
 	const { allPayments, handleUpdatePayments } = useFetchConfigPayments()
-	const { selectedProviders, bindActionsProviders } = useFetchConfigProviders()
-	const { selectedSlots, bindActionsSlots } = useFetchConfigSlots()
 
 	/////////
 
@@ -194,12 +190,6 @@ const WrapperAddNewCasino: FC<TVariantOpenPage> = ({
 				},
 			})
 		})
-		await bindActionsSlots.handleUpdateSlots({
-			casino_id: item.id,
-		})
-		await bindActionsProviders.handleUpdateProviders({
-			casino_id: item.id,
-		})
 	}
 
 	const fetchSentData = async () => {
@@ -238,44 +228,33 @@ const WrapperAddNewCasino: FC<TVariantOpenPage> = ({
 				id: -1,
 				lang: settings.getCurrentLang('casino'),
 				bind_id: interceptionProps.bind_id,
-			})
-				.then(async (e) => {
-					setInterceptionProps((prev) => {
-						return {
-							...prev,
-							id: !e.dataRes?.id ? -1 : e.dataRes?.id,
-							editFor: !e.dataRes?.id ? 'ADD' : 'UPDATE',
-						}
-					})
-					if (e.dataRes?.id) {
-						getCategoryWithClear({
-							resource: 'casino',
-						})
-
-						await getCategories({
-							id: e.dataRes.id,
-						}).then((e) => {
-							setCategories({
-								resource: 'casino',
-								category: e,
-							})
-						})
+			}).then(async (e) => {
+				setInterceptionProps((prev) => {
+					return {
+						...prev,
+						id: !e.dataRes?.id ? -1 : e.dataRes?.id,
+						editFor: !e.dataRes?.id ? 'ADD' : 'UPDATE',
 					}
-
-					setEditingData({
-						data: e.dataRes,
+				})
+				if (e.dataRes?.id) {
+					getCategoryWithClear({
+						resource: 'casino',
 					})
+
+					await getCategories({
+						id: e.dataRes.id,
+					}).then((e) => {
+						setCategories({
+							resource: 'casino',
+							category: e,
+						})
+					})
+				}
+
+				setEditingData({
+					data: e.dataRes,
 				})
-				.then(() => {
-					bindActionsSlots
-						.getSelectedSlots({ casino_id: interceptionProps.id })
-						.then((e) => bindActionsSlots.handleSetSelectedSlots(e))
-				})
-				.then(() => {
-					bindActionsProviders
-						.getSelectedProviders({ casino_id: interceptionProps.id })
-						.then((e) => bindActionsProviders.handleSetSelectedProviders(e))
-				})
+			})
 		}
 	}, [interceptionProps.bind_id, settings.getCurrentLang('casino')])
 
@@ -325,11 +304,9 @@ const WrapperAddNewCasino: FC<TVariantOpenPage> = ({
 						{activeTab.key === 'review' && <ReceivingData />}
 						{activeTab.key === 'category' && (
 							<CategorySetting
-								{...{ selectedSlots, selectedProviders }}
-								handleChangeProviders={
-									bindActionsProviders.handleChangeSelectedProviders
-								}
-								handleChangeSlots={bindActionsSlots.handleChangeSelectedSlots}
+								{...{ selectedSlots: null, selectedProviders: null }}
+								handleChangeProviders={() => {}}
+								handleChangeSlots={() => {}}
 							/>
 						)}
 						{activeTab.key === 'bonus' && <div>{activeTab.key}</div>}

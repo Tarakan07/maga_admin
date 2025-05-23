@@ -1,27 +1,34 @@
-import { MoreEditSvg, PlusSvg } from '@/_assets/svg/editTag'
-import { useModal } from '@/libs/HOC/ModalHOC/ModalHOC'
-import { TCategoriesRes } from '@/services/API/categories/categories.type'
-import { TProvidersBody } from '@/services/API/providers/providers.type'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { THandleEditParams } from '../../CatVariantResource/CatVariantResource.type'
-import s from './CatVariantEdit.module.scss'
+import { useModal } from '@/libs/HOC/ModalHOC/ModalHOC'
+import { MoreEditSvg, PlusSvg } from '@/_assets/svg/editTag'
 import { TGenresBody } from '@/services/API/genres/genres.type'
+import { TProvidersBody } from '@/services/API/providers/providers.type'
+import { TCategoriesRes } from '@/services/API/categories/categories.type'
+import s from './CatVariantEdit.module.scss'
+import { THandleEditParams } from '../../CatVariantResource/CatVariantResource.type'
 type TProps = {
 	category?: TCategoriesRes | TProvidersBody | TGenresBody | null
 	handleEdit: (params: THandleEditParams) => void
 	add_link?: string | null
 	update_link?: string | null
+	child?: boolean
 }
-const CatVariantEdit: FC<TProps> = ({ category, handleEdit, add_link = null, update_link = null }) => {
+const CatVariantEdit: FC<TProps> = ({
+	category,
+	handleEdit,
+	add_link = null,
+	update_link = null,
+	child = false,
+}) => {
 	const { openModal } = useModal()
 	return (
 		<div className={s.container}>
-			{add_link && 
+			{!child && add_link && (
 				<Link to={add_link}>
 					<PlusSvg />
 				</Link>
-			}
+			)}
 			{category && update_link && (
 				<Link to={`${update_link}/${category.id}`}>
 					<MoreEditSvg />

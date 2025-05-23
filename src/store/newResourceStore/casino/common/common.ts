@@ -2,10 +2,10 @@ import { create } from 'zustand'
 import { TCommonState } from './common.type'
 export const INIT_COMMON_DATA = {
 	ratings: {
-		reliability: '0',
-		withdrawal: '0',
-		speed: '0',
-		playerRating: '0',
+		reliability: '2',
+		withdrawal: '2',
+		speed: '2',
+		playerRating: '2',
 	},
 	selects: {
 		blockedCountries: [],
@@ -14,12 +14,12 @@ export const INIT_COMMON_DATA = {
 	wallets: [],
 
 	promos: {
-		promoTitle: '',
-		promoDescription: '',
+		promoTitle: '11',
+		promoDescription: '12',
 	},
 	referral: {
-		refUrl: '',
-		refBtnTitle: '',
+		refUrl: '12',
+		refBtnTitle: '123',
 	},
 }
 export const useCommonStore = create<TCommonState>((set) => ({
@@ -101,8 +101,8 @@ export const useCommonStore = create<TCommonState>((set) => ({
 				},
 			},
 		})),
-	// //SetProviders, SetSlots, SetWallets в одну функцию 
-	// setProviders: ({ value }) => 
+	// //SetProviders, SetSlots, SetWallets в одну функцию
+	// setProviders: ({ value }) =>
 	// 	set((state) => {
 	// 		const findIndex = state.commonData.providers.findIndex(
 	// 			(e) => e.id === value.id
@@ -136,7 +136,7 @@ export const useCommonStore = create<TCommonState>((set) => ({
 	// 			}
 	// 		}
 	// 	}),
-	// setSlots: ({ value }) => 
+	// setSlots: ({ value }) =>
 	// 	set((state) => {
 	// 		const findIndex = state.commonData.slots.findIndex(
 	// 			(e) => e.id === value.id

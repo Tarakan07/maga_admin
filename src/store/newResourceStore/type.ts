@@ -1,6 +1,6 @@
 import { TLangKey } from '@/libs/context/LanguageProvider'
 
-type TVariantResource = 'casino' | 'news' | 'articles' | 'history' | 'category' | 'slots' | 'providers'
+type TVariantResource = 'casino' | 'news' | 'articles' | 'category'
 
 type TVariantRequest = 'ADD' | 'UPDATE'
 

@@ -1,35 +1,38 @@
+import { useNavigate } from 'react-router-dom'
+import { FC, useEffect, useState } from 'react'
 import Tabs from '@/components/Tabs/Tabs'
 import { routes } from '@/constants/routes'
-import { TLangKey } from '@/libs/context/LanguageProvider'
-import { useLang } from '@/libs/context/LocalLangContext/LocalLangContext'
 import useTabs from '@/libs/hooks/use-tabs'
 import { generateLink } from '@/libs/utils/generateLink'
+import { TLangKey } from '@/libs/context/LanguageProvider'
+import { useLang } from '@/libs/context/LocalLangContext/LocalLangContext'
 import { TCategoriesCreateRes } from '@/services/API/categories/categories.type'
+import { TCategoriesKeysTabs } from '@/store/newResourceStore/_common/categories/categoriesStore'
+import {
+	INIT_CONSTRUCTOR_DATA,
+	useConstructorStore,
+} from '@/store/newResourceStore/_common/constructor/constructorStore'
 import {
 	useCreateCategory,
 	useDeleteCategoryById,
 	useGetCategoryById,
 	useUpdateCategoryById,
 } from '@/services/API/categories/hook'
-import { TCategoriesKeysTabs } from '@/store/newResourceStore/_common/categories/categoriesStore'
-import {
-	INIT_CONSTRUCTOR_DATA,
-	useConstructorStore,
-} from '@/store/newResourceStore/_common/constructor/constructorStore'
-import { FC, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { HeaderActions } from '../../../_common/_comp'
-import WrapperAddNewResource from '../../../_common/_comp/WrapperAddNewResource'
-import EmbeddedContent from '../../../_common/AddNewResource/EmbeddedContent/EmbeddedContent'
-import { VariantNewResourceContext } from '../../../_common/AddNewResource/ReceivingData/_context/VariantNewResourceContext'
-import ReceivingData from '../../../_common/AddNewResource/ReceivingData/ReceivingData'
-import SettingWidget from '../../../_common/AddNewResource/SettingWidget/SettingWidget'
-import { TVariantOpenPage } from '../../../Constructor.type'
 import { INIT_DATA, INIT_TABS } from './const'
 import SeoResource from './SeoResource/SeoResource'
-import { TCategoryJsonObj, THandleChangeFromParams, TStateModalCat } from './type'
 import s from './WrapperAddNewCategory.module.scss'
-
+import { HeaderActions } from '../../../_common/_comp'
+import { TVariantOpenPage } from '../../../Constructor.type'
+import WrapperAddNewResource from '../../../_common/_comp/WrapperAddNewResource'
+import {
+	TCategoryJsonObj,
+	THandleChangeFromParams,
+	TStateModalCat,
+} from './type'
+import ReceivingData from '../../../_common/AddNewResource/ReceivingData/ReceivingData'
+import SettingWidget from '../../../_common/AddNewResource/SettingWidget/SettingWidget'
+import EmbeddedContent from '../../../_common/AddNewResource/EmbeddedContent/EmbeddedContent'
+import { VariantNewResourceContext } from '../../../_common/AddNewResource/ReceivingData/_context/VariantNewResourceContext'
 
 const WrapperAddNewCategory: FC<TVariantOpenPage> = ({
 	editFor,
@@ -118,12 +121,13 @@ const WrapperAddNewCategory: FC<TVariantOpenPage> = ({
 		//   variantEdit: editFor === 'ADD' ? 'create' : 'update',
 		// })
 		if (interceptionProps.editFor === 'ADD') {
-			await createItem(formData).then((e) => {
+			await createItem({ ...formData, parent_id: null }).then((e) => {
 				setInterceptionProps((prev) => {
 					return {
 						...prev,
 						id: !e?.id ? -1 : e?.id,
 						editFor: 'UPDATE',
+						parent_id: null,
 					}
 				})
 			})

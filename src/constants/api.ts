@@ -1,15 +1,13 @@
 const BASE_PROD = 'http://89.221.203.201:5002/api/'
-const BASE_LEVA_URL = 'https://lk.leva-ndar.ru/-api-'
 
-const BASE_CDN_LEVA = 'https://s3.leva-ndar.ru/images'
-const BASE_CDN_MAIN = 'https://s3.casino-track.com/images'
+const BASE_CDN_MAIN = 'https://89.221.203.201:5002/images'
 
 const BASE_URL = BASE_PROD
-
-const BASE_CDN_URL = BASE_CDN_MAIN
+// http://89.221.203.201:5002/api/v1/images/3b75c7f6-ee8d-40e7-9340-89e8c2c6ff0d
+// const BASE_CDN_URL = BASE_CDN_MAIN
 
 const PREFIX = {
-	current_prefix: '/v1',
+	current_prefix: 'v1',
 	auth: '/v1/auth',
 }
 const SERVICES = {
@@ -24,7 +22,7 @@ const SERVICES = {
 	robots: `${PREFIX.current_prefix}/robots`,
 	openai: `${PREFIX.current_prefix}/openai`,
 }
-
+const BASE_CDN_URL = `${BASE_PROD}${SERVICES.image_cdn}`
 const Path = {}
 
 export { BASE_URL, BASE_CDN_URL, PREFIX, SERVICES, Path }
