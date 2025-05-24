@@ -6,8 +6,6 @@ import {
 	TCasinoListRes,
 	TCasinoPaymentsListRes,
 	TParamsAddCasinoToPaymentsRes,
-	TParamsAddCasinoToProviderRes,
-	TParamsAddCasinoToSlotRes,
 	TParamsAddPaymentsToCasinoReq,
 	TParamsAddProvidersToCasinoReq,
 	TParamsAddSlotsToCasinoReq,
@@ -184,12 +182,9 @@ export const updatePaymentsForCasinoById = async ({
 
 export const getProvidersForCasinoById = async ({
 	casino_id,
-}: Pick<
-	TParamsAddProvidersToCasinoReq,
-	'casino_id'
->): Promise<TParamsAddCasinoToProviderRes> => {
+}: Pick<TParamsAddProvidersToCasinoReq, 'casino_id'>): Promise<any> => {
 	try {
-		const response = await API.get<TParamsAddCasinoToProviderRes>(
+		const response = await API.get<any>(
 			`${SERVICES.casino}/${casino_id}/providers`
 		)
 		return response.data
@@ -204,9 +199,9 @@ export const getProvidersForCasinoById = async ({
 export const updateProvidersForCasinoById = async ({
 	casino_id,
 	ids,
-}: TParamsAddProvidersToCasinoReq): Promise<TParamsAddCasinoToProviderRes> => {
+}: TParamsAddProvidersToCasinoReq): Promise<any> => {
 	try {
-		const response = await API.patch<TParamsAddCasinoToProviderRes>(
+		const response = await API.patch<any>(
 			`${SERVICES.casino}/${casino_id}/providers`,
 			ids
 		)
@@ -223,14 +218,9 @@ export const updateProvidersForCasinoById = async ({
 
 export const getSlotsForCasinoById = async ({
 	casino_id,
-}: Pick<
-	TParamsAddSlotsToCasinoReq,
-	'casino_id'
->): Promise<TParamsAddCasinoToSlotRes> => {
+}: Pick<TParamsAddSlotsToCasinoReq, 'casino_id'>): Promise<any> => {
 	try {
-		const response = await API.get<TParamsAddCasinoToSlotRes>(
-			`${SERVICES.casino}/${casino_id}/slots`
-		)
+		const response = await API.get<any>(`${SERVICES.casino}/${casino_id}/slots`)
 		return response.data
 	} catch {
 		return {
@@ -243,9 +233,9 @@ export const getSlotsForCasinoById = async ({
 export const updateSlotsForCasinoById = async ({
 	casino_id,
 	ids,
-}: TParamsAddSlotsToCasinoReq): Promise<TParamsAddCasinoToSlotRes> => {
+}: TParamsAddSlotsToCasinoReq): Promise<any> => {
 	try {
-		const response = await API.patch<TParamsAddCasinoToSlotRes>(
+		const response = await API.patch<any>(
 			`${SERVICES.casino}/${casino_id}/slots`,
 			ids
 		)

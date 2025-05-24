@@ -2,13 +2,11 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { useModal } from '@/libs/HOC/ModalHOC/ModalHOC'
 import { MoreEditSvg, PlusSvg } from '@/_assets/svg/editTag'
-import { TGenresBody } from '@/services/API/genres/genres.type'
-import { TProvidersBody } from '@/services/API/providers/providers.type'
 import { TCategoriesRes } from '@/services/API/categories/categories.type'
 import s from './CatVariantEdit.module.scss'
 import { THandleEditParams } from '../../CatVariantResource/CatVariantResource.type'
 type TProps = {
-	category?: TCategoriesRes | TProvidersBody | TGenresBody | null
+	category?: TCategoriesRes | null
 	handleEdit: (params: THandleEditParams) => void
 	add_link?: string | null
 	update_link?: string | null

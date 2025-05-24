@@ -5,8 +5,6 @@ import {
 	TTypeTagCasinoCommon,
 	TTypeTagCasinoCommonWallets,
 } from '@/store/newResourceStore/casino/common/common.type'
-import { TSlotBody } from '../slots/slots.type'
-import { TProvidersBody } from '../providers/providers.type'
 
 type TBonus = {
 	promo_code: {
@@ -133,11 +131,9 @@ export type TParamsAddProvidersToCasinoReq = {
 	casino_id: number
 	ids: number[]
 }
-export type TParamsAddCasinoToProviderRes = TProvidersBody[]
 
 ///
 export type TParamsAddSlotsToCasinoReq = {
 	casino_id: number
 	ids: number[]
 }
-export type TParamsAddCasinoToSlotRes = TSlotBody[]

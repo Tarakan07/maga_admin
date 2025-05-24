@@ -3,9 +3,7 @@ import cn from 'classnames'
 import { P } from '@/libs/UI/CustomTags'
 import { useCascade } from '@/libs/hooks/use-cascade'
 import { ArrowDropDownSvg } from '@/_assets/svg/arrows'
-import { TSlotBody } from '@/services/API/slots/slots.type'
 import { TVariantResource } from '@/store/newResourceStore/type'
-import { TProvidersBody } from '@/services/API/providers/providers.type'
 import { useCategoriesStore } from '@/store/newResourceStore/_common/categories/categoriesStore'
 import s from './CategorySetting.module.scss'
 import CategoryItem from './CategoryItem/CategoryItem'
@@ -13,10 +11,10 @@ import { TGetSizeAddedParams, TToggleCategory } from './CategorySetting.type'
 import { VariantNewResourceContext } from '../AddNewResource/ReceivingData/_context/VariantNewResourceContext'
 
 type TProps = {
-	selectedProviders: TProvidersBody[] | null
-	handleChangeProviders: ({ value }: { value: TProvidersBody }) => void
-	selectedSlots: TSlotBody[] | null
-	handleChangeSlots: ({ value }: { value: TSlotBody }) => void
+	selectedProviders: any[] | null
+	handleChangeProviders: ({ value }: { value: any }) => void
+	selectedSlots: any[] | null
+	handleChangeSlots: ({ value }: { value: any }) => void
 }
 
 const CategorySetting: React.FC<TProps> = ({

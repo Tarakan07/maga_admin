@@ -1,6 +1,3 @@
-import { TProvidersBody } from "@/services/API/providers/providers.type"
-import { TSlotBody } from "@/services/API/slots/slots.type"
-
 type TTypeTagCasinoCommon = string
 type TTypeTagCasinoCommonWallets = {
 	id: number
@@ -40,12 +37,7 @@ type TSetRatingsParams = {
 	field: keyof TCommonData['ratings']
 	value: string
 }
-type TSetProvidersParams = {
-	value: TProvidersBody
-}
-type TSetSlotsParams = {
-	value: TSlotBody
-}
+
 //
 
 type TCommonState = {

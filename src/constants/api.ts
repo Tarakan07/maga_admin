@@ -23,6 +23,7 @@ const SERVICES = {
 	openai: `${PREFIX.current_prefix}/openai`,
 }
 const BASE_CDN_URL = `${BASE_PROD}${SERVICES.image_cdn}`
+
 const Path = {}
 
 export { BASE_URL, BASE_CDN_URL, PREFIX, SERVICES, Path }
