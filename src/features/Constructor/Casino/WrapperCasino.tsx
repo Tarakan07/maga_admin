@@ -60,11 +60,8 @@ const WrapperCasino = () => {
 	return (
 		<div className={s.wrapper}>
 			<div className={s.header}>
-				<HeaderSetting title={getLocalization('Казино')} refetch={refetch} />
-				<AddNewItem
-					labelBtn={getLocalization('Добавить казино')}
-					link={routes.ADD_CASINO}
-				/>
+				<HeaderSetting title={'Статьи'} refetch={refetch} />
+				<AddNewItem labelBtn={'Добавить статью'} link={routes.ADD_CASINO} />
 			</div>
 			<PanelLightSetting
 				linkAdd={routes.ADD_CASINO}

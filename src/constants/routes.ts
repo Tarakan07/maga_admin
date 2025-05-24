@@ -3,15 +3,15 @@ import { ArticlesSvg, TagsSvg } from '@/_assets/svg/nav'
 export const INDEX_PAGE = '/'
 const ADMIN_PAGE = 'admin'
 
-const CASINO = 'casino'
-const ADD_CASINO = 'add-casino'
-const UPDATE_CASINO = 'update-casino'
+const CASINO = 'article'
+const ADD_CASINO = 'add-article'
+const UPDATE_CASINO = 'update-article'
 const NEWS = 'news'
 const ADD_NEWS = 'add-news'
 const UPDATE_NEWS = 'update-news'
-const ARTICLE = 'article'
-const ADD_ARTICLE = 'add-article'
-const UPDATE_ARTICLE = 'update-article'
+const ARTICLE = 'article1'
+const ADD_ARTICLE = 'add-article1'
+const UPDATE_ARTICLE = 'update-article1'
 const HISTORY = 'history'
 const ADD_HISTORY = 'add-history'
 const UPDATE_HISTORY = 'update-history'
@@ -59,7 +59,7 @@ export const routes = {
 }
 export const navigate = [
 	{
-		name: 'Казино',
+		name: 'Статьи',
 		link: CASINO,
 		icon: ArticlesSvg,
 	},

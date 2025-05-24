@@ -6,7 +6,6 @@ import { Button, P } from '@/libs/UI/CustomTags'
 import { ModalConfirm } from '@/components/Modal'
 import { useModal } from '@/libs/HOC/ModalHOC/ModalHOC'
 import { TVariantRequest } from '@/store/newResourceStore/type'
-import LangSelector from '@/components/LangSelector/LangSelector'
 import { TLangKey, useLanguage } from '@/libs/context/LanguageProvider'
 import { useSettingStore } from '@/store/newResourceStore/_common/setting/settingStore'
 import s from './SettingWidget.module.scss'
@@ -35,7 +34,7 @@ const SettingWidget: FC<TProps> = ({
 	const { variantResource } = useContext(VariantNewResourceContext)
 	const removeText = useMemo(() => {
 		if (variantResource === 'articles') return 'статью'
-		else if (variantResource === 'casino') return 'казино'
+		else if (variantResource === 'casino') return 'статью'
 		else if (variantResource === 'news') return 'новость'
 		else if (variantResource === 'category') return 'категорию'
 	}, [variantResource, editFor])
@@ -57,7 +56,7 @@ const SettingWidget: FC<TProps> = ({
 						{getLocalization('Настройки')}
 					</P>
 					<div className={s.wrap}>
-						<Button
+						{/* <Button
 							type="primary_row"
 							onClick={() => {
 								if (linkResource && linkResource.includes('/en/'))
@@ -75,7 +74,7 @@ const SettingWidget: FC<TProps> = ({
 							}}
 						>
 							Посмотреть на сайте
-						</Button>
+						</Button> */}
 						<Button
 							type="primary_row"
 							onClick={() => {
@@ -134,7 +133,7 @@ const SettingWidget: FC<TProps> = ({
 									/>
 								</div>
 							)}
-
+							{/* 
 							<div className={s.row}>
 								<P size="s">{getLocalization('Язык страницы')}</P>
 								<div className={s.langSelector}>
@@ -158,7 +157,7 @@ const SettingWidget: FC<TProps> = ({
 										}
 									/>
 								</div>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</div>

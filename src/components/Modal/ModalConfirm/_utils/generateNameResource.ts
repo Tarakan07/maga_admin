@@ -11,7 +11,7 @@ export const generateNameResource = ({
 	variantResource,
 }: TParams): string => {
 	const resourceTitles: Record<TVariantResource, Record<TLangKey, string>> = {
-		casino: { ru: 'Казино', en: 'Casino' },
+		casino: { ru: 'Статью', en: 'Casino' },
 		news: { ru: 'Новость', en: 'News' },
 		articles: { ru: 'Статью', en: 'Articles' },
 		category: { ru: 'Категорию', en: 'Category' },

@@ -94,7 +94,7 @@ const CategorySetting: React.FC<TProps> = ({
 					</div>
 
 					<div className={s.right}>
-						<P size="l"> {label[variantResource]}</P>
+						<P size="l"> Статьи</P>
 						<P size="l">
 							{getSizeAdded({
 								category: categoriesCasino.allCategories,

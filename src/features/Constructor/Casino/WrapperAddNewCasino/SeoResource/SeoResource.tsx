@@ -21,7 +21,7 @@ const SeoResource = () => {
 				</div>
 			</div>
 			<Input
-				placeholder="Название казино"
+				placeholder="Название статьи"
 				value={seoData.name}
 				onChange={(e) => setSeoData({ field: 'name', value: e.target.value })}
 				placeholder_type="is_shown"

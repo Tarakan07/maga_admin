@@ -38,7 +38,7 @@ const WrapperCatItemEdit: FC<TProps> = ({
 				>
 					<ArrowDropDownSvg />
 					<div className={s.info}>
-						<P size="l">{label}</P>
+						<P size="l">Статьи</P>
 						<P color="grey">{count}</P>
 					</div>
 				</div>
