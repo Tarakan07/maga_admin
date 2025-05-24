@@ -55,7 +55,7 @@ export const getCasinoById = async ({
 	try {
 		let additionParams = bind_id ? `/id/${bind_id}` : `/${id}`
 		const response = await API.get<any, { data: TSingleCasinoRes }>(
-			`${SERVICES.casino}${additionParams}`,
+			`${SERVICES.casino}${`/${bind_id}`}`,
 			{
 				headers: {
 					language: lang,

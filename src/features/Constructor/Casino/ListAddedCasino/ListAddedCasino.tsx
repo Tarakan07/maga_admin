@@ -51,7 +51,7 @@ const ListAddedCasino: FC<TProps> = ({ variantContent, data }) => {
 						}}
 						callbackEdit={() => {
 							navigate(
-								`${routes.UPDATE_CASINO}/${casino.bind_id}/${casino.language}`,
+								`${routes.UPDATE_CASINO}/${casino.id}/${casino.language}`,
 								{
 									state: {
 										itemId: casino.id,
